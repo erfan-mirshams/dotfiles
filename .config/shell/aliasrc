@@ -1,0 +1,13 @@
+# aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias sudo='doas'
+alias sudoedit='doas rnano'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias mpv='devour mpv'
+alias sxiv='devour sxiv'
+alias zathura='devour zathura'
+alias libreoffice='devour libreoffice'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias emacs='emacsclient -c -a emacs'
