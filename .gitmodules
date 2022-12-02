@@ -1,3 +1,6 @@
 [submodule ".config/dwm"]
 	path = .config/dwm
 	url = ./.config/dwm
+[submodule ".config/st"]
+	path = .config/st
+	url = https://github.com/erfan-mirshams/st.git
