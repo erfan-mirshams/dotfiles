@@ -1,0 +1,23 @@
+#!/bin/sh
+vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
+state="$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Master))"
+
+# If muted, print 🔇 and exit.
+[ "$state" = "off" ] && echo 🔇 && exit
+
+vol="${vol::-1}"
+split() {
+	# For ommiting the . without calling and external program.
+	IFS=$2
+	set -- $1
+	printf '%s' "$@"
+}
+vol="$(split "$vol" ".")"
+vol="${vol##0}"
+
+icon="🔈"
+[ "$vol" -gt 70 ] && icon="🔊"
+[ "$vol" -gt 30 ] && [ "$vol" -le 70 ] && icon="🔉"
+[ "$vol" -le 30 ] && icon="🔈"
+
+echo "$icon $vol%"

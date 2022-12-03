@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# goes through list of languages in my case only English and persian
+kb="$(setxkbmap -query | grep -oP 'layout:\s*\K\w+')" || exit 1
+
+[ "$kb" = "us" ] && target="ir"
+[ "$kb" = "ir" ] && target="us"
+
+setxkbmap "$target"
+
+pkill -RTMIN+1 "${STATUSBAR:-dwmblocks}";

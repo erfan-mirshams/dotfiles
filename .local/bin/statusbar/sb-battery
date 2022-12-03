@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Prints all batteries, their percentage remaining and an emoji corresponding
+
+# Loop through all attached batteries and format the info
+for battery in /sys/class/power_supply/BAT?*; do
+	# If non-first battery, print a space separator.
+	[ -n "${capacity+x}" ] && printf " "
+	# Sets capacity
+	capacity="$(cat "$battery/capacity" 2>&1)"
+	# Will make a warn variable if discharging and low
+	[ "$capacity" -le 25 ] && battery_icon=""
+	[ "$capacity" -gt 25 ] && [ "$capacity" -le 50 ] && battery_icon=""
+	[ "$capacity" -gt 50 ] && [ "$capacity" -le 75 ] && battery_icon=""
+	[ "$capacity" -gt 75 ] && battery_icon=""
+	# Compromising for now
+	battery_icon="🔋"
+	# Prints the info
+	printf "%s %d%%" "$battery_icon" "$capacity"
+done && printf "\\n"

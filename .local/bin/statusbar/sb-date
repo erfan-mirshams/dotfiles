@@ -1,0 +1,3 @@
+#!/bin/sh
+printf "📅 "
+date "+%Y %b %d (%a)"
