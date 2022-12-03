@@ -1,0 +1,4 @@
+#!/bin/sh
+# set a random wallpaper from the background's folder
+
+feh --recursive --bg-fill --randomize /usr/share/backgrounds
