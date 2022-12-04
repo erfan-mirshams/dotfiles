@@ -1,4 +1,4 @@
 #!/bin/sh
-# increase volume by 5%
-amixer -q sset Master 5%-
+# decrease volume by 5%
+pamixer -d 5
 pkill -RTMIN+2 "${STATUSBAR:-dwmblocks}"

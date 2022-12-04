@@ -1,8 +1,5 @@
 # Adding .local/bin to $PATH
-export PATH=/home/erfan/.local/share/go/bin:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar:$PATH
-
-# Export GOPATH for personal repos
-export GOPATH=/home/erfan/projects/go-tutor:$GOPATH
+export PATH=/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar:$PATH
 
 # Default programs
 export EDITOR="nvim"
