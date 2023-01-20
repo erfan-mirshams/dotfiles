@@ -13,8 +13,6 @@ for battery in /sys/class/power_supply/BAT?*; do
 	[ "$capacity" -gt 25 ] && [ "$capacity" -le 50 ] && battery_icon=""
 	[ "$capacity" -gt 50 ] && [ "$capacity" -le 75 ] && battery_icon=""
 	[ "$capacity" -gt 75 ] && battery_icon=""
-	# Compromising for now
-	battery_icon="🔋"
 	# Prints the info
 	printf "%s %d%%" "$battery_icon" "$capacity"
 done && printf "\\n"
