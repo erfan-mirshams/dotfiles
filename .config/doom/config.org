@@ -1,0 +1,398 @@
+#+title: Erfan's Doom Emacs Config
+#+author: Erfan Mirshams
+#+description: Erfan's personal Doom Emacs config
+#+startup: showeverything
+#+property: header-args:emacs-lisp :tangle ./config.el
+#+auto-tangle: t
+
+* Credentials
+Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets. It is optional.
+
+#+begin_src emacs-lisp
+(setq user-full-name "Erfan Mirshams"
+      user-mail-address "erfanmirshams@protonmail.com")
+#+end_src
+
+* Aesthetics
+** Font
+Settings related to fonts within Doom Emacs:
++ 'doom-font' -- standard monospace font that is used for most things in Emacs.
++ 'doom-variable-pitch-font' -- variable font which is useful in some Emacs plugins.
++ 'doom-big-font' -- used in doom-big-font-mode; useful for presentations.
++ 'font-lock-comment-face' -- for comments.
++ 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
+
+#+begin_src emacs-lisp
+(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 13 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14))
+#+end_src
+** Theme
+ There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme' or manually load a theme with the
+ `load-theme' function. I personally like Oceanic Next.
+
+ #+begin_src emacs-lisp
+(setq doom-theme 'doom-oceanic-next)
+ #+end_src
+
+** Transparency
+#+begin_src emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(95 95))
+(add-to-list 'default-frame-alist '(alpha 95 95))
+#+end_src
+
+** Line Numbers
+#+begin_src emacs-lisp
+(setq display-line-numbers-type 'relative)
+#+end_src
+
+* Beacon
+Never lose your cursor.  When you scroll, your cursor will shine!  This is a global minor-mode. Turn it on everywhere with:
+
+#+begin_src emacs-lisp
+(beacon-mode 1)
+#+end_src
+
+* Dired
+Dired is the file manager within Emacs.  Below, I setup keybindings for image previews (peep-dired).  Doom Emacs does not use 'SPC d' for any of its keybindings, so I've chosen the format of 'SPC d' plus 'key'.
+
+** Keybindings To Open Dired
+
+| COMMAND    | DESCRIPTION                        | KEYBINDING |
+|------------+------------------------------------+------------|
+| dired      | /Open dired file manager/            | SPC d d    |
+| dired-jump | /Jump to current directory in dired/ | SPC d j    |
+
+** Keybindings Within Dired
+*** Basic dired commands
+
+| COMMAND                | DESCRIPTION                                 | KEYBINDING |
+|------------------------+---------------------------------------------+------------|
+| dired-view-file        | /View file in dired/                          | SPC d v    |
+| dired-up-directory     | /Go up in directory tree/                     | h          |
+| dired-find-file        | /Go down in directory tree (or open if file)/ | l          |
+| dired-next-line        | /Move down to next line/                      | j          |
+| dired-previous-line    | /Move up to previous line/                    | k          |
+| dired-mark             | /Mark file at point/                          | m          |
+| dired-unmark           | /Unmark file at point/                        | u          |
+| dired-do-copy          | /Copy current file or marked files/           | C          |
+| dired-do-rename        | /Rename current file or marked files/         | R          |
+| dired-hide-details     | /Toggle detailed listings on/off/             | (          |
+| dired-git-info-mode    | /Toggle git information on/off/               | )          |
+| dired-create-directory | /Create new empty directory/                  | +          |
+| dired-diff             | /Compare file at point with another/          | =          |
+| dired-subtree-toggle   | /Toggle viewing subtree at point/             | TAB        |
+
+*** Dired commands using regex
+
+| COMMAND                 | DESCRIPTION                | KEYBINDING |
+|-------------------------+----------------------------+------------|
+| dired-mark-files-regexp | /Mark files using regex/     | % m        |
+| dired-do-copy-regexp    | /Copy files using regex/     | % C        |
+| dired-do-rename-regexp  | /Rename files using regex/   | % R        |
+| dired-mark-files-regexp | /Mark all files using regex/ | * %        |
+
+*** File permissions and ownership
+
+| COMMAND         | DESCRIPTION                      | KEYBINDING |
+|-----------------+----------------------------------+------------|
+| dired-do-chgrp  | /Change the group of marked files/ | g G        |
+| dired-do-chmod  | /Change the mode of marked files/  | M          |
+| dired-do-chown  | /Change the owner of marked files/ | O          |
+| dired-do-rename | /Rename file or all marked files/  | R          |
+
+#+begin_src emacs-lisp
+(map! :leader
+      (:prefix ("d" . "dired")
+       :desc "Open dired" "d" #'dired
+       :desc "Dired jump to current" "j" #'dired-jump)
+      (:after dired
+              (:map dired-mode-map
+               :desc "Peep-dired image previews" "d p" #'peep-dired
+               :desc "Dired view file"           "d v" #'dired-view-file)))
+
+(evil-define-key 'normal dired-mode-map
+  (kbd "M-RET") 'dired-display-file
+  (kbd "h") 'dired-up-directory
+  (kbd "l") 'dired-open-file ; use dired-find-file instead of dired-open.
+  (kbd "m") 'dired-mark
+  (kbd "t") 'dired-toggle-marks
+  (kbd "u") 'dired-unmark
+  (kbd "C") 'dired-do-copy
+  (kbd "D") 'dired-do-delete
+  (kbd "J") 'dired-goto-file
+  (kbd "M") 'dired-do-chmod
+  (kbd "O") 'dired-do-chown
+  (kbd "P") 'dired-do-print
+  (kbd "R") 'dired-do-rename
+  (kbd "T") 'dired-do-touch
+  (kbd "Y") 'dired-copy-filenamecopy-filename-as-kill ; copies filename to kill ring.
+  (kbd "Z") 'dired-do-compress
+  (kbd "+") 'dired-create-directory
+  (kbd "-") 'dired-do-kill-lines
+  (kbd "% l") 'dired-downcase
+  (kbd "% m") 'dired-mark-files-regexp
+  (kbd "% u") 'dired-upcase
+  (kbd "* %") 'dired-mark-files-regexp
+  (kbd "* .") 'dired-mark-extension
+  (kbd "* /") 'dired-mark-directories
+  (kbd "; d") 'epa-dired-do-decrypt
+  (kbd "; e") 'epa-dired-do-encrypt)
+
+;; With dired-open plugin, you can launch external programs for certain extensions
+;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
+(setq dired-open-extensions '(("gif" . "sxiv")
+                              ("jpg" . "sxiv")
+                              ("png" . "sxiv")
+                              ("mkv" . "mpv")
+                              ("mp4" . "mpv")))
+#+end_src
+
+** Keybindings Within Dired With Peep-Dired-Mode Enabled
+If peep-dired is enabled, you will get image previews as you go up/down with 'j' and 'k'
+
+| COMMAND              | DESCRIPTION                              | KEYBINDING |
+|----------------------+------------------------------------------+------------|
+| peep-dired           | /Toggle previews within dired/             | SPC d p    |
+| peep-dired-next-file | /Move to next file in peep-dired-mode/     | j          |
+| peep-dired-prev-file | /Move to previous file in peep-dired-mode/ | k          |
+
+#+BEGIN_SRC emacs-lisp
+(evil-define-key 'normal peep-dired-mode-map
+  (kbd "j") 'peep-dired-next-file
+  (kbd "k") 'peep-dired-prev-file)
+(add-hook 'peep-dired-hook 'evil-normalize-keymaps)
+#+END_SRC
+
+
+* Bookmarks and Buffers
+Doom Emacs uses 'SPC b' for keybindings related to bookmarks and buffers.
+
+** Bookmarks
+Bookmarks are somewhat like registers in that they record positions you can jump to.  Unlike registers, they have long names, and they persist automatically from one Emacs session to the next. The prototypical use of bookmarks is to record where you were reading in various files.
+
+| COMMAND         | DESCRIPTION                            | KEYBINDING |
+|-----------------+----------------------------------------+------------|
+| list-bookmarks  | /List bookmarks/                         | SPC b L    |
+| bookmark-set    | /Set bookmark/                           | SPC b m    |
+| bookmark-delete | /Delete bookmark/                        | SPC b M    |
+| bookmark-save   | /Save current bookmark to bookmark file/ | SPC b w    |
+
+#+BEGIN_SRC emacs-lisp
+(setq bookmark-default-file "~/.config/doom/bookmarks")
+
+(map! :leader
+      (:prefix ("b". "buffer")
+       :desc "List bookmarks"                          "L" #'list-bookmarks
+       :desc "Set bookmark"                            "m" #'bookmark-set
+       :desc "Delete bookmark"                         "M" #'bookmark-set
+       :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
+#+END_SRC
+
+** Buffers
+Regarding /buffers/, the text you are editing in Emacs resides in an object called a /buffer/. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing.  /Ibuffer/ is a program that lists all of your Emacs /buffers/, allowing you to navigate between them and filter them.
+
+| COMMAND         | DESCRIPTION          | KEYBINDING |
+|-----------------+----------------------+------------|
+| ibuffer         | /Launch ibuffer/       | SPC b i    |
+| kill-buffer     | /Kill current buffer/  | SPC b k    |
+| next-buffer     | /Goto next buffer/     | SPC b n    |
+| previous-buffer | /Goto previous buffer/ | SPC b p    |
+| save-buffer     | /Save current buffer/  | SPC b s    |
+
+** Global Auto Revert
+A buffer can get out of sync with respect to its visited file on disk if that file is changed by another program. To keep it up to date, you can enable Auto Revert mode by typing M-x auto-revert-mode, or you can set it to be turned on globally with 'global-auto-revert-mode'.  I have also turned on Global Auto Revert on non-file buffers, which is especially useful for 'dired' buffers.
+
+#+begin_src emacs-lisp
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+#+end_src
+
+** Keybindings within ibuffer mode
+| COMMAND                           | DESCRIPTION                              | KEYBINDING |
+|-----------------------------------+------------------------------------------+------------|
+| ibuffer-mark-forward              | /Mark the buffer/                        | m          |
+| ibuffer-unmark-forward            | /Unmark the buffer/                      | u          |
+| ibuffer-do-kill-on-deletion-marks | /Kill the marked buffers/                | x          |
+| ibuffer-filter-by-content         | /Ibuffer filter by content/              | f c        |
+| ibuffer-filter-by-directory       | /Ibuffer filter by directory/            | f d        |
+| ibuffer-filter-by-filename        | /Ibuffer filter by filename (full path)/ | f f        |
+| ibuffer-filter-by-mode            | /Ibuffer filter by mode/                 | f m        |
+| ibuffer-filter-by-name            | /Ibuffer filter by name/                 | f n        |
+| ibuffer-filter-disable            | /Disable ibuffer filter/                 | f x        |
+| ibuffer-do-kill-lines             | /Hide marked buffers/                    | g h        |
+| ibuffer-update                    | /Restore hidden buffers/                 | g H        |
+
+#+begin_src emacs-lisp
+(evil-define-key 'normal ibuffer-mode-map
+  (kbd "f c") 'ibuffer-filter-by-content
+  (kbd "f d") 'ibuffer-filter-by-directory
+  (kbd "f f") 'ibuffer-filter-by-filename
+  (kbd "f m") 'ibuffer-filter-by-mode
+  (kbd "f n") 'ibuffer-filter-by-name
+  (kbd "f x") 'ibuffer-filter-disable
+  (kbd "g h") 'ibuffer-do-kill-lines
+  (kbd "g H") 'ibuffer-update)
+#+end_src
+
+* Elfeed
+An RSS newsfeed reader for Emacs.
+
+#+BEGIN_SRC emacs-lisp
+(setq elfeed-goodies/entry-pane-size 0.5)
+
+(evil-define-key 'normal elfeed-show-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+(evil-define-key 'normal elfeed-search-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+(setq elfeed-feeds (quote
+                    (("https://www.reddit.com/r/linux.rss" reddit linux)
+                     ("https://www.reddit.com/r/commandline.rss" reddit commandline)
+                     ("https://www.reddit.com/r/distrotube.rss" reddit distrotube)
+                     ("https://www.reddit.com/r/emacs.rss" reddit emacs)
+                     ("https://www.gamingonlinux.com/article_rss.php" gaming linux)
+                     ("https://hackaday.com/blog/feed/" hackaday linux)
+                     ("https://opensource.com/feed" opensource linux)
+                     ("https://linux.softpedia.com/backend.xml" softpedia linux)
+                     ("https://itsfoss.com/feed/" itsfoss linux)
+                     ("https://www.zdnet.com/topic/linux/rss.xml" zdnet linux)
+                     ("https://www.phoronix.com/rss.php" phoronix linux)
+                     ("http://feeds.feedburner.com/d0od" omgubuntu linux)
+                     ("https://www.computerworld.com/index.rss" computerworld linux)
+                     ("https://www.networkworld.com/category/linux/index.rss" networkworld linux)
+                     ("https://www.techrepublic.com/rssfeeds/topic/open-source/" techrepublic linux)
+                     ("https://betanews.com/feed" betanews linux)
+                     ("http://lxer.com/module/newswire/headlines.rss" lxer linux))))
+#+END_SRC
+
+
+* Evalaute Elisp Expressions
+Changing some keybindings from their defaults to better fit with Doom Emacs, and to avoid conflicts with my window managers which sometimes use the control key in their keybindings.  By default, Doom Emacs does not use 'SPC e' for anything, so I choose to use the format 'SPC e' plus 'key' for these (I also use 'SPC e' for 'eww' keybindings).
+
+| COMMAND         | DESCRIPTION                                  | KEYBINDING |
+|-----------------+----------------------------------------------+------------|
+| eval-buffer     | /Evaluate elisp in buffer/                     | SPC e b    |
+| eval-defun      | /Evaluate the defun containing or after point/ | SPC e d    |
+| eval-expression | /Evaluate an elisp expression/                 | SPC e e    |
+| eval-last-sexp  | /Evaluate elisp expression before point/       | SPC e l    |
+| eval-region     | /Evaluate elisp in region/                     | SPC e r    |
+
+#+Begin_src emacs-lisp
+(map! :leader
+      (:prefix ("e". "evaluate/ERC/EWW")
+       :desc "Evaluate elisp in buffer"  "b" #'eval-buffer
+       :desc "Evaluate defun"            "d" #'eval-defun
+       :desc "Evaluate elisp expression" "e" #'eval-expression
+       :desc "Evaluate last sexpression" "l" #'eval-last-sexp
+       :desc "Evaluate elisp in region"  "r" #'eval-region))
+#+END_SRC
+
+* EWW
+EWW is the Emacs Web Wowser, the builtin browser in Emacs.  Below I set urls to open in a specific browser (eww) with browse-url-browser-function.  By default, Doom Emacs does not use 'SPC e' for anything, so I choose to use the format 'SPC e' plus 'key' for these (I also use 'SPC e' for 'eval' keybindings).  I chose to use 'SPC s w' for eww-search-words because Doom Emacs uses 'SPC s' for 'search' commands.
+
+#+BEGIN_SRC emacs-lisp
+(setq browse-url-browser-function 'eww-browse-url)
+(map! :leader
+      :desc "Search web for text between BEG/END"
+      "s w" #'eww-search-words
+      (:prefix ("e" . "evaluate/ERC/EWW")
+       :desc "Eww web browser" "w" #'eww
+       :desc "Eww reload page" "R" #'eww-reload))
+#+END_SRC
+
+* Line Settings
+The standard Emacs keybinding for comment-line is 'C-x C-;'.  The other keybindings are for commands that toggle on/off various line-related settings.  Doom Emacs uses 'SPC t' for "toggle" commands, so I choose 'SPC t' plus 'key' for those bindings.
+
+| COMMAND                  | DESCRIPTION                               | KEYBINDING  |
+|--------------------------+-------------------------------------------+-------------|
+| hl-line-mode             | /Toggle line highlighting in current frame/ | SPC t h     |
+| global-hl-line-mode      | /Toggle line highlighting globally/         | SPC t H     |
+| doom/toggle-line-numbers | /Toggle line numbers/                       | SPC t l     |
+| toggle-truncate-lines    | /Toggle truncate lines/                     | SPC t t     |
+
+#+BEGIN_SRC emacs-lisp
+(setq display-line-numbers-type t)
+(map! :leader
+      (:prefix ("t" . "toggle")
+       :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
+       :desc "Toggle line highlight in frame" "h" #'hl-line-mode
+       :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
+#+END_SRC
+
+* Mouse Support
+Adding mouse support in the terminal version of Emacs.
+
+#+begin_src emacs-lisp
+(xterm-mouse-mode 1)
+#+end_src
+
+* Org-Mode
+Adding personal org directory and org agenda config. Plus adding a sensible keybinding for org-babel-tangle
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+
+(use-package! org
+  :config
+  (setq org-directory "~/org/")
+  (setq org-agenda-files
+        '("~/org/habits.org"
+          "~/org/birthdays.org"
+          "~/org/todo.org"))
+  (require 'org-habit)
+  (add-to-list 'org-modules 'org-habit)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-refile-targets
+        '(("archive.org" :maxlevel . 1)
+          ("todo.org" :maxlevel . 1)))
+  (advice-add 'org-refile :after 'org-save-all-org-buffers)
+  (advice-add 'org-agenda-quit :after 'org-save-all-org-buffers))
+#+end_src
+
+** Org-auto-tangle
+=org-auto-tangle= allows you to add the option =#+auto_tangle: t= in your Org file so that it automatically tangles when you save the document.
+
+#+begin_src emacs-lisp
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (setq org-auto-tangle-default t))
+#+end_src
+
+* Winner Mode
+Winner mode has been included with GNU Emacs since version 20.  This is a global minor mode and, when activated, it allows you to “undo” (and “redo”) changes in the window configuration with the key commands 'SCP w <left>' and 'SPC w <right>'.
+
+#+BEGIN_SRC emacs-lisp
+(map! :leader
+      (:prefix ("w" . "window")
+       :desc "Winner redo" "<right>" #'winner-redo
+       :desc "Winner undo" "<left>"  #'winner-undo))
+#+END_SRC
+
+* Zap to char
+Emacs provides a 'zap-to-char' command that kills from the current point to a character.  It is bound to 'M-z' in standard GNU Emacs but since Doom Emacs uses 'SPC' as its leader key and does not have 'SPC z' binded to anything, it just makes since to use it for 'zap-to-char'.  Note that 'zap-to-char' can be used with the universal argument 'SPC u' to modify its behavior.  Examples of 'zap-to-char' usage are listed in the table below:
+
+| KEYBINDING                | WHAT IS DOES                                               |
+|---------------------------+------------------------------------------------------------|
+| SPC z e                   | /deletes all chars to the next occurrence of 'e'/            |
+| SPC u 2 SPC z e           | /deletes all chars to the second occurrence of 'e'/          |
+| SPC u - SPC z e           | /deletes all chars to the previous occurrence of 'e'/        |
+| SPC u - 2 SPC z e         | /deletes all chars to the second previous occurrence of 'e'/ |
+| SPC u 1 0 0 SPC u SPC z e | /deletes all chars to the 100th occurrence of 'e'/           |
+
+=TIP=: The universal argument (SPC u) can only take a single integer by default.  If you need to use a multi-digit number (like 100 in the last example in the table above), then you must terminate the universal argument with another 'SPC u' after typing the number.
+
+'zap-up-to-char' is an alternative command that does not zap the char specified.  It is binded to 'SPC Z'.  It can also be used in conjunction with the universal argument 'SPC u' in similar fashion to the the 'zap-to-char' examples above.
+
+=NOTE=:  Vim (evil mode) has similar functionality builtin.  You can delete to the next occurrence of 'e' by using 'dte' in normal.  To delete to the next occurrence of 'e' including the 'e', then you would use 'dfe'.  And you can modify 'dt' and 'df' by prefixing them with numbers, so '2dte' would delete to the second occurrence of 'e'.
+
+#+BEGIN_SRC emacs-lisp
+(map! :leader
+      :desc "Zap to char"    "z" #'zap-to-char
+      :desc "Zap up to char" "Z" #'zap-up-to-char)
+#+END_SRC
