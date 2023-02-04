@@ -44,7 +44,6 @@ const int MOD = 1e9 + 7;
 const int MOD2 = 998244353;
 const ll INF = 8e18;
 $0
-int main()
-{
+int main() {
 
 }

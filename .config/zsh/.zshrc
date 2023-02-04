@@ -91,12 +91,15 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
+# Initializing keychain
+eval $(keychain --eval --quiet --confhost github)
+
 # Initializing prompt
 autoload -Uz promptinit
 promptinit
 
 # Set prompt
-prompt suse
+eval "$(starship init zsh)"
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null

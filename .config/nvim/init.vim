@@ -40,4 +40,4 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 autocmd BufNewFile *.cpp 0r ~/templates/programming/temp.cpp
-autocmd BufNewFile *.c 0r ~/templates/programming/temp.c 
+autocmd BufNewFile *.c 0r ~/templates/programming/temp.c

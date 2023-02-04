@@ -3,7 +3,6 @@
 #+description: Erfan's personal Doom Emacs config
 #+startup: showeverything
 #+property: header-args:emacs-lisp :tangle ./config.el
-#+auto-tangle: t
 
 * Credentials
 Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets. It is optional.
@@ -138,30 +137,30 @@ Dired is the file manager within Emacs.  Below, I setup keybindings for image pr
   (kbd "; d") 'epa-dired-do-decrypt
   (kbd "; e") 'epa-dired-do-encrypt)
 
-;; With dired-open plugin, you can launch external programs for certain extensions
-;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
+;; With dired-open plugin, you can launch external programs for certain extensions.
 (setq dired-open-extensions '(("gif" . "sxiv")
                               ("jpg" . "sxiv")
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
-                              ("mp4" . "mpv")))
+                              ("mp4" . "mpv")
+                              ("pdf" . "zathura")))
 #+end_src
 
 ** Keybindings Within Dired With Peep-Dired-Mode Enabled
 If peep-dired is enabled, you will get image previews as you go up/down with 'j' and 'k'
 
-| COMMAND              | DESCRIPTION                              | KEYBINDING |
-|----------------------+------------------------------------------+------------|
+| COMMAND              | DESCRIPTION                                | KEYBINDING |
+|----------------------+--------------------------------------------+------------|
 | peep-dired           | /Toggle previews within dired/             | SPC d p    |
 | peep-dired-next-file | /Move to next file in peep-dired-mode/     | j          |
 | peep-dired-prev-file | /Move to previous file in peep-dired-mode/ | k          |
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
 (evil-define-key 'normal peep-dired-mode-map
   (kbd "j") 'peep-dired-next-file
   (kbd "k") 'peep-dired-prev-file)
 (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
-#+END_SRC
+#+end_src
 
 
 * Bookmarks and Buffers
@@ -170,8 +169,8 @@ Doom Emacs uses 'SPC b' for keybindings related to bookmarks and buffers.
 ** Bookmarks
 Bookmarks are somewhat like registers in that they record positions you can jump to.  Unlike registers, they have long names, and they persist automatically from one Emacs session to the next. The prototypical use of bookmarks is to record where you were reading in various files.
 
-| COMMAND         | DESCRIPTION                            | KEYBINDING |
-|-----------------+----------------------------------------+------------|
+| COMMAND         | DESCRIPTION                              | KEYBINDING |
+|-----------------+------------------------------------------+------------|
 | list-bookmarks  | /List bookmarks/                         | SPC b L    |
 | bookmark-set    | /Set bookmark/                           | SPC b m    |
 | bookmark-delete | /Delete bookmark/                        | SPC b M    |
@@ -191,8 +190,8 @@ Bookmarks are somewhat like registers in that they record positions you can jump
 ** Buffers
 Regarding /buffers/, the text you are editing in Emacs resides in an object called a /buffer/. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing.  /Ibuffer/ is a program that lists all of your Emacs /buffers/, allowing you to navigate between them and filter them.
 
-| COMMAND         | DESCRIPTION          | KEYBINDING |
-|-----------------+----------------------+------------|
+| COMMAND         | DESCRIPTION            | KEYBINDING |
+|-----------------+------------------------+------------|
 | ibuffer         | /Launch ibuffer/       | SPC b i    |
 | kill-buffer     | /Kill current buffer/  | SPC b k    |
 | next-buffer     | /Goto next buffer/     | SPC b n    |
@@ -351,6 +350,10 @@ Adding personal org directory and org agenda config. Plus adding a sensible keyb
           ("todo.org" :maxlevel . 1)))
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
   (advice-add 'org-agenda-quit :after 'org-save-all-org-buffers))
+(defun set-bidi-env ()
+  "interactive"
+  (setq bidi-paragraph-direction 'nil))
+(add-hook 'org-mode-hook 'set-bidi-env)
 #+end_src
 
 ** Org-auto-tangle

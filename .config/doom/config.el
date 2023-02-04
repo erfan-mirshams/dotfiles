@@ -50,13 +50,13 @@
   (kbd "; d") 'epa-dired-do-decrypt
   (kbd "; e") 'epa-dired-do-encrypt)
 
-;; With dired-open plugin, you can launch external programs for certain extensions
-;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
+;; With dired-open plugin, you can launch external programs for certain extensions.
 (setq dired-open-extensions '(("gif" . "sxiv")
                               ("jpg" . "sxiv")
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
-                              ("mp4" . "mpv")))
+                              ("mp4" . "mpv")
+                              ("pdf" . "zathura")))
 
 (evil-define-key 'normal peep-dired-mode-map
   (kbd "j") 'peep-dired-next-file
@@ -157,6 +157,10 @@
           ("todo.org" :maxlevel . 1)))
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
   (advice-add 'org-agenda-quit :after 'org-save-all-org-buffers))
+(defun set-bidi-env ()
+  "interactive"
+  (setq bidi-paragraph-direction 'nil))
+(add-hook 'org-mode-hook 'set-bidi-env)
 
 (use-package! org-auto-tangle
   :defer t
