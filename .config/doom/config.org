@@ -43,7 +43,6 @@ Settings related to fonts within Doom Emacs:
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
 #+end_src
-
 * Beacon
 Never lose your cursor.  When you scroll, your cursor will shine!  This is a global minor-mode. Turn it on everywhere with:
 
@@ -311,7 +310,6 @@ The standard Emacs keybinding for comment-line is 'C-x C-;'.  The other keybindi
 | toggle-truncate-lines    | /Toggle truncate lines/                     | SPC t t     |
 
 #+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type t)
 (map! :leader
       (:prefix ("t" . "toggle")
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
@@ -399,3 +397,4 @@ Emacs provides a 'zap-to-char' command that kills from the current point to a ch
       :desc "Zap to char"    "z" #'zap-to-char
       :desc "Zap up to char" "Z" #'zap-up-to-char)
 #+END_SRC
+

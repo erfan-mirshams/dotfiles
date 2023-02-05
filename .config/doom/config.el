@@ -128,7 +128,6 @@
        :desc "Eww web browser" "w" #'eww
        :desc "Eww reload page" "R" #'eww-reload))
 
-(setq display-line-numbers-type t)
 (map! :leader
       (:prefix ("t" . "toggle")
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
