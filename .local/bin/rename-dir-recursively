@@ -1,0 +1,20 @@
+#!/bin/sh
+# Convert filenames to lowercase
+# and replace characters
+# modifies filename to standard desired format
+##################################
+
+find . -depth -name '*' | while read file ; do
+        directory=$(dirname "$file")
+        oldfilename=$(basename "$file")
+        newfilename=$(echo "$oldfilename" | tr 'A-Z' 'a-z' | tr ' ' '-' | sed -r 's/\./_/g; s/_([^_]*)$/\.\1/' | tr '_' '-' | tr -d '(){}[]"' | sed 's/\([-]\)\1\+/\1/g')
+        if [ "$oldfilename" != "$newfilename" ]; then
+                echo "$directory/$oldfilename" "$directory/$newfilename"
+                mv -i "$directory/$oldfilename" "$directory/$newfilename"
+                echo "$directory"
+                echo "$oldfilename"
+                echo "$newfilename"
+                echo
+        fi
+        done
+exit 0

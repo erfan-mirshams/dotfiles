@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Shuffle play the music playlist through mpv
+
+mpv --force-window --shuffle ~/music
