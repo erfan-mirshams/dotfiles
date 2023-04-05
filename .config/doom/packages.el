@@ -66,6 +66,7 @@
 (package! mw-thesaurus)
 (package! org-auto-tangle)
 (package! org-web-tools)
+(package! org-present)
 (package! ox-gemini)
 (package! peep-dired)
 (package! password-store)
@@ -75,5 +76,4 @@
 (package! wc-mode)
 (package! beacon)
 (package! clippy)
-(package! minimap)
 (package! olivetti)

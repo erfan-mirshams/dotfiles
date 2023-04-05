@@ -1,8 +1,9 @@
 (setq user-full-name "Erfan Mirshams"
       user-mail-address "erfanmirshams@protonmail.com")
 
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 13 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14))
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 13)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14)
+      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 20))
 
 (setq doom-theme 'doom-oceanic-next)
 
@@ -10,6 +11,10 @@
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
 (setq display-line-numbers-type 'relative)
+
+(setq c-basic-offset 4)
+
+(require 'org-faces)
 
 (beacon-mode 1)
 
@@ -112,6 +117,9 @@
                      ("https://betanews.com/feed" betanews linux)
                      ("http://lxer.com/module/newswire/headlines.rss" lxer linux))))
 
+(after! cider
+  (set-popup-rule! "^\\*cider" :ignore t))
+
 (map! :leader
       (:prefix ("e". "evaluate/ERC/EWW")
        :desc "Evaluate elisp in buffer"  "b" #'eval-buffer
@@ -139,7 +147,6 @@
 
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
-
 (use-package! org
   :config
   (setq org-directory "~/org/")

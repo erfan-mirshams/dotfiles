@@ -22,8 +22,9 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 13 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14))
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 13)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14)
+      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 20))
 #+end_src
 ** Theme
  There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme' or manually load a theme with the
@@ -43,6 +44,18 @@ Settings related to fonts within Doom Emacs:
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
 #+end_src
+** Indent size in C-like languages
+#+begin_src emacs-lisp
+(setq c-basic-offset 4)
+#+end_src
+
+* Presentation in Org-Mode
+#+begin_src emacs-lisp
+(require 'org-faces)
+
+
+#+end_src
+
 * Beacon
 Never lose your cursor.  When you scroll, your cursor will shine!  This is a global minor-mode. Turn it on everywhere with:
 
@@ -264,6 +277,12 @@ An RSS newsfeed reader for Emacs.
                      ("http://lxer.com/module/newswire/headlines.rss" lxer linux))))
 #+END_SRC
 
+* Changing Cider's pop-up config
+
+#+begin_src emacs-lisp
+(after! cider
+  (set-popup-rule! "^\\*cider" :ignore t))
+#+end_src
 
 * Evalaute Elisp Expressions
 Changing some keybindings from their defaults to better fit with Doom Emacs, and to avoid conflicts with my window managers which sometimes use the control key in their keybindings.  By default, Doom Emacs does not use 'SPC e' for anything, so I choose to use the format 'SPC e' plus 'key' for these (I also use 'SPC e' for 'eww' keybindings).
@@ -331,7 +350,6 @@ Adding personal org directory and org agenda config. Plus adding a sensible keyb
 #+begin_src emacs-lisp
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
-
 (use-package! org
   :config
   (setq org-directory "~/org/")

@@ -92,7 +92,7 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
 # Initializing keychain
-eval $(keychain --eval --quiet --confhost github)
+eval $(keychain --eval --quiet --confhost github codeberg)
 
 # Initializing prompt
 autoload -Uz promptinit
