@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-refile-last-stored"
+ (filename . "~/org/archive.org")
+ (front-context-string . "* DONE payesh sa")
+ (rear-context-string . "2023-01-06 Fri>\n")
+ (position . 494))
+("local-binaries"
+ (filename . "~/.local/bin/")
+ (front-context-string . "dmenu-unicode\n  ")
+ (rear-context-string . "48 Jan 20 16:05 ")
+ (position . 291))
+("ap"
+ (filename . "~/projects/ap/")
+ (front-context-string)
+ (rear-context-string . "0K Feb 21 13:30 ")
+ (position . 354))
+("uni"
+ (filename . "~/documents/uni/term-2/")
+ (front-context-string . "ap\n  drwxr-xr-x ")
+ (rear-context-string . "0K Feb 12 20:47 ")
+ (position . 132))
+)
