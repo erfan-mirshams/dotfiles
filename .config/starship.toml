@@ -1,0 +1,18 @@
+#format = """
+#[╭─user───❯](bold blue) $username
+#[┣─system─❯](bold yellow) $hostname
+#[┣─project❯](bold red) $directory$rust$git_branch$git_state$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
+#[╰─cmd────❯](bold green)
+#"""
+#
+# Don't insert a blank line between shell prompts
+add_newline = false
+
+# Make prompt a single line instead of two lines.
+[line_break]
+disabled = true
+
+# Disabling battery module
+[battery]
+disabled = true
+
