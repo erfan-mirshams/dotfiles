@@ -22,9 +22,9 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 13)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14)
-      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 20))
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 24)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
+      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 45))
 #+end_src
 ** Theme
  There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme' or manually load a theme with the

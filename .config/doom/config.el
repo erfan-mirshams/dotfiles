@@ -1,9 +1,9 @@
 (setq user-full-name "Erfan Mirshams"
       user-mail-address "erfanmirshams@protonmail.com")
 
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 13)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 14)
-      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 20))
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 24)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
+      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 45))
 
 (setq doom-theme 'doom-oceanic-next)
 
