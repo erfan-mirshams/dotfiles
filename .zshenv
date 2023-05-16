@@ -13,6 +13,9 @@ export QT_AUTO_SCREEN_SET_FACTOR=0
 export QT_SCALE_FACTOR=2
 export QT_FONT_DPI=96
 
+# batman
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # ~/ clean-up
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
