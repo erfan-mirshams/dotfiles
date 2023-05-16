@@ -29,7 +29,7 @@ colo OceanicNext
 hi Normal guibg=NONE ctermbg=NONE
 set noshowmode
 
-let &makeprg='clear && g++ -Wall -Wextra -Wshadow -O2 -o %.out %'
+let &makeprg='clear && g++ -fsanitize=address -fsanitize=leak -Wall -Wextra -Wshadow -O2 -o %.out %'
 map <F5> :w <bar> :make<CR>
 
 inoremap " ""<left>
@@ -39,5 +39,3 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-autocmd BufNewFile *.cpp 0r ~/templates/programming/temp.cpp
-autocmd BufNewFile *.c 0r ~/templates/programming/temp.c
