@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-refile-last-stored"
+(("oly"
+ (filename . "~/projects/oly/")
+ (front-context-string . "amali_dahom\n  dr")
+ (rear-context-string . "0K Apr  8 11:46 ")
+ (position . 125))
+("org-refile-last-stored"
  (filename . "~/org/archive.org")
  (front-context-string . "* DONE payesh sa")
  (rear-context-string . "2023-01-06 Fri>\n")

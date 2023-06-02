@@ -12,7 +12,9 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq c-basic-offset 4)
+(setq-default c-basic-offset 2)
+(add-hook 'c++-mode-hook (lambda () (setq-local c-basic-offset 2)))
+(add-hook 'c-mode-hook (lambda () (setq-local c-basic-offset 2)))
 
 (require 'org-faces)
 
@@ -182,3 +184,6 @@
 (map! :leader
       :desc "Zap to char"    "z" #'zap-to-char
       :desc "Zap up to char" "Z" #'zap-up-to-char)
+
+(after! clojure-mode
+  (add-hook 'clojure-mode-hook #'enable-paredit-mode))

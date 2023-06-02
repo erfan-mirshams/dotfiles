@@ -77,3 +77,4 @@
 (package! beacon)
 (package! clippy)
 (package! olivetti)
+(package! mermaid-mode)

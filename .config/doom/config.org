@@ -46,14 +46,14 @@ Settings related to fonts within Doom Emacs:
 #+end_src
 ** Indent size in C-like languages
 #+begin_src emacs-lisp
-(setq c-basic-offset 4)
+(setq-default c-basic-offset 2)
+(add-hook 'c++-mode-hook (lambda () (setq-local c-basic-offset 2)))
+(add-hook 'c-mode-hook (lambda () (setq-local c-basic-offset 2)))
 #+end_src
 
 * Presentation in Org-Mode
 #+begin_src emacs-lisp
 (require 'org-faces)
-
-
 #+end_src
 
 * Beacon
@@ -416,3 +416,9 @@ Emacs provides a 'zap-to-char' command that kills from the current point to a ch
       :desc "Zap up to char" "Z" #'zap-up-to-char)
 #+END_SRC
 
+* Enable Paredit mode in Clojure mode
+
+#+begin_src emacs-lisp
+(after! clojure-mode
+  (add-hook 'clojure-mode-hook #'enable-paredit-mode))
+#+end_src
