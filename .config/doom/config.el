@@ -1,7 +1,7 @@
 (setq user-full-name "Erfan Mirshams"
       user-mail-address "erfanmirshams@protonmail.com")
 
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 24)
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 26)
       doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
       doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 45))
 
@@ -187,3 +187,5 @@
 
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
+
+(setq doom-features '(sql))

@@ -1,4 +1,9 @@
 #!/bin/sh
 # set a random wallpaper from the background's folder
 
-feh --recursive --bg-fill --randomize /usr/share/backgrounds
+PIC=$(find "/usr/share/backgrounds" -type f | shuf -n 1)
+wal -qni $PIC -s
+feh --bg-fill $PIC
+cp $XDG_CACHE_HOME/wal/colors.Xresources $XDG_CONFIG_HOME/xresources
+xrdb -merge $XDG_CONFIG_HOME/xresources
+xsetroot -name "fsignal:1"

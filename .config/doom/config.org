@@ -22,7 +22,7 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 24)
+(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 26)
       doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
       doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 45))
 #+end_src
@@ -421,4 +421,10 @@ Emacs provides a 'zap-to-char' command that kills from the current point to a ch
 #+begin_src emacs-lisp
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
+#+end_src
+
+* SQL
+
+#+begin_src emacs-lisp
+(setq doom-features '(sql))
 #+end_src
