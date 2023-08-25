@@ -73,6 +73,7 @@
 (package! rainbow-mode)
 (package! resize-window)
 (package! tldr)
+(package! visual-fill-column)
 (package! wc-mode)
 (package! beacon)
 (package! clippy)

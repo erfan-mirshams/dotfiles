@@ -3,7 +3,7 @@
 
 (setq doom-font (font-spec :family "Dejavu Sans Mono" :size 26)
       doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
-      doom-big-font (font-spec :family "Iosevka Aile" :weight 'light :size 45))
+      doom-big-font (font-spec :family "Dejavu Sans Mono" :size 40))
 
 (setq doom-theme 'doom-oceanic-next)
 
@@ -17,6 +17,53 @@
 (add-hook 'c-mode-hook (lambda () (setq-local c-basic-offset 2)))
 
 (require 'org-faces)
+
+;; Configure fill width
+(setq visual-fill-column-width 50
+      visual-fill-column-center-text t)
+
+
+(defun my/org-present-prepare-slide (buffer-name heading)
+  ;; Show only top-level headlines
+  (org-overview)
+
+  ;; Unfold the current entry
+  (org-show-entry)
+
+  ;; Show only direct subheadings of the slide but don't expand them
+  (org-show-children))
+
+(defun my/org-present-start ()
+  ;; Tweak font sizes
+  (doom-big-font-mode 1)
+  ;; Set a blank header line string to create blank space at the top
+  (setq header-line-format " ")
+
+  ;; Display inline images automatically
+  (org-display-inline-images)
+
+  ;; Center the presentation and wrap lines
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1))
+
+(defun my/org-present-end ()
+  ;; Reset font customizations
+  (doom-big-font-mode 0)
+
+  ;; Clear the header line string so that it isn't displayed
+  (setq header-line-format nil)
+
+  ;; Stop displaying inline images
+  (org-remove-inline-images)
+
+  ;; Stop centering the document
+  (visual-fill-column-mode 0)
+  (visual-line-mode 0))
+
+;; Register hooks with org-present
+(add-hook 'org-present-mode-hook 'my/org-present-start)
+(add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+(add-hook 'org-present-after-navigate-functions 'my/org-present-prepare-slide)
 
 (beacon-mode 1)
 
@@ -148,7 +195,8 @@
 (xterm-mouse-mode 1)
 
 (map! :leader
-      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+      :desc "Org babel tangle" "m B" #'org-babel-tangle
+      :desc "Org babe execute source block code" "b e" #'org-babel-execute-src-block-maybe)
 (use-package! org
   :config
   (setq org-directory "~/org/")
@@ -175,6 +223,18 @@
   :hook (org-mode . org-auto-tangle-mode)
   :config
   (setq org-auto-tangle-default t))
+
+(use-package! org-roam
+  :init
+  (setq org-roam-capture-templates
+        `(("d" "default" plain "%?"
+           :target
+           (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "${title}\n")
+           :unnarrowed t)))
+  :custom
+  (org-roam-directory "~/org/roam")
+  :config
+  (org-roam-db-autosync-mode))
 
 (map! :leader
       (:prefix ("w" . "window")
