@@ -177,13 +177,7 @@
        :desc "Evaluate last sexpression" "l" #'eval-last-sexp
        :desc "Evaluate elisp in region"  "r" #'eval-region))
 
-(setq browse-url-browser-function 'eww-browse-url)
-(map! :leader
-      :desc "Search web for text between BEG/END"
-      "s w" #'eww-search-words
-      (:prefix ("e" . "evaluate/ERC/EWW")
-       :desc "Eww web browser" "w" #'eww
-       :desc "Eww reload page" "R" #'eww-reload))
+(setq browse-url-browser-function 'browse-url-firefox)
 
 (map! :leader
       (:prefix ("t" . "toggle")
@@ -225,14 +219,13 @@
   (setq org-auto-tangle-default t))
 
 (use-package! org-roam
-  :init
-  (setq org-roam-capture-templates
-        `(("d" "default" plain "%?"
-           :target
-           (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "${title}\n")
-           :unnarrowed t)))
   :custom
   (org-roam-directory "~/org/roam")
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      "%?"
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+TITLE: ${title}\n#+DATE: %U\n")
+      :unnarrowed t)))
   :config
   (org-roam-db-autosync-mode))
 
