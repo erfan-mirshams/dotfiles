@@ -7,11 +7,6 @@
    '("ddffe74bc4bf2c332c2c3f67f1b8141ee1de8fd6b7be103ade50abb97fe70f0c" default))
  '(warning-suppress-types
    '(((yasnippet zombie))
-     ((yasnippet zombie))
-     ((yasnippet zombie))
-     ((yasnippet zombie))
-     ((yasnippet zombie))
-     ((yasnippet zombie))
      (defvaralias))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
