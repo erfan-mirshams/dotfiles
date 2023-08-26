@@ -75,7 +75,6 @@
 (package! tldr)
 (package! visual-fill-column)
 (package! wc-mode)
-(package! beacon)
 (package! clippy)
 (package! olivetti)
 (package! mermaid-mode)

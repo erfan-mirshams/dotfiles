@@ -2,16 +2,21 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("oly"
+(("org-capture-last-stored"
+ (filename . "~/org/roam/20230826105522-emacs.org")
+ (front-context-string)
+ (rear-context-string . "8-26 Sat 10:55]\n")
+ (position . 114))
+("oly"
  (filename . "~/projects/oly/")
  (front-context-string . "amali_dahom\n  dr")
  (rear-context-string . "0K Apr  8 11:46 ")
  (position . 125))
 ("org-refile-last-stored"
  (filename . "~/org/archive.org")
- (front-context-string . "* DONE payesh sa")
- (rear-context-string . "2023-01-06 Fri>\n")
- (position . 494))
+ (front-context-string . "* DONE Azmoon mo")
+ (rear-context-string . "23-06-02 Fri>\n\n\n")
+ (position . 977))
 ("local-binaries"
  (filename . "~/.local/bin/")
  (front-context-string . "dmenu-unicode\n  ")
