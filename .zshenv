@@ -1,5 +1,5 @@
 # Adding .local/bin to $PATH
-export PATH=/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar:$PATH
+export PATH=$PATH:/home/erfan/.local/share/go/bin:/home/erfan/.local/share/cargo/bin:/opt/jetbrains-toolbox-2.0.4.17212:/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar
 
 # Default programs
 export EDITOR="nvim"
