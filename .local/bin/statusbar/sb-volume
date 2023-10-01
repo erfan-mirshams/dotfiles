@@ -5,9 +5,9 @@ state="$(pamixer --get-mute)"
 # If muted, print 🔇 and exit.
 [ "$state" = "true" ] && echo 🔇 && exit
 
-icon=""
-[ "$vol" -gt 70 ] && icon=""
-[ "$vol" -gt 30 ] && [ "$vol" -le 70 ] && icon=""
-[ "$vol" -le 30 ] && icon=""
+icon="🔈"
+[ "$vol" -gt 70 ] && icon="🔊"
+[ "$vol" -gt 30 ] && [ "$vol" -le 70 ] && icon="🔉"
+[ "$vol" -le 30 ] && icon="🔈"
 
 echo "$icon $vol%"
