@@ -28,16 +28,16 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 26)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
-      doom-big-font (font-spec :family "Dejavu Sans Mono" :size 40))
+(setq doom-font (font-spec :family "Inconsolata Nerd Font Mono" :size 28)
+      doom-variable-pitch-font (font-spec :family "Samim" :size 30)
+      doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 42))
 #+end_src
 ** Theme
  There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme' or manually load a theme with the
  `load-theme' function. I personally like Oceanic Next.
 
  #+begin_src emacs-lisp
-(setq doom-theme 'doom-oceanic-next)
+(setq doom-theme 'modus-vivendi)
  #+end_src
 
 ** Transparency
@@ -49,12 +49,6 @@ Settings related to fonts within Doom Emacs:
 ** Line Numbers
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
-#+end_src
-** Indent size in C-like languages
-#+begin_src emacs-lisp
-(setq-default c-basic-offset 2)
-(add-hook 'c++-mode-hook (lambda () (setq-local c-basic-offset 2)))
-(add-hook 'c-mode-hook (lambda () (setq-local c-basic-offset 2)))
 #+end_src
 
 * Presentation in Org-Mode
@@ -203,8 +197,7 @@ Dired is the file manager within Emacs.  Below, I setup keybindings for image pr
                               ("jpg" . "sxiv")
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
-                              ("mp4" . "mpv")
-                              ("pdf" . "zathura")))
+                              ("mp4" . "mpv")))
 #+end_src
 
 ** Keybindings Within Dired With Peep-Dired-Mode Enabled
@@ -511,32 +504,6 @@ capture was not aborted."
                                                           "#+title: ${title}\n#+category: ${title}\n#+filetags: Project"
                                                           ("Tasks"))))))
 
-(defun my/org-roam-copy-todo-to-today ()
-  (interactive)
-  (let ((org-refile-keep t) ;; Set this to nil to delete the original!
-        (org-roam-dailies-capture-templates
-         '(("t" "tasks" entry "%?"
-            :if-new (file+head+olp "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n" ("Tasks")))))
-        (org-after-refile-insert-hook #'save-buffer)
-        today-file
-        pos)
-    (save-window-excursion
-      (org-roam-dailies--capture (current-time) t)
-      (setq today-file (buffer-file-name))
-      (setq pos (point)))
-
-    ;; Only refile if the target file is different than the current file
-    (unless (equal (file-truename today-file)
-                   (file-truename (buffer-file-name)))
-      (org-refile nil nil (list "Tasks" today-file nil pos)))))
-
-(add-to-list 'org-after-todo-state-change-hook
-             (lambda ()
-               (when (equal org-state "DONE")
-                 (my/org-roam-copy-todo-to-today))))
-
-
-
 (map! :leader
       (:prefix "n r"
        :desc "insert node immediate" "I" #'org-roam-node-insert-immediate
@@ -554,29 +521,6 @@ Winner mode has been included with GNU Emacs since version 20.  This is a global
        :desc "Winner undo" "<left>"  #'winner-undo))
 #+END_SRC
 
-* Zap to char
-Emacs provides a 'zap-to-char' command that kills from the current point to a character.  It is bound to 'M-z' in standard GNU Emacs but since Doom Emacs uses 'SPC' as its leader key and does not have 'SPC z' binded to anything, it just makes since to use it for 'zap-to-char'.  Note that 'zap-to-char' can be used with the universal argument 'SPC u' to modify its behavior.  Examples of 'zap-to-char' usage are listed in the table below:
-
-| KEYBINDING                | WHAT IS DOES                                               |
-|---------------------------+------------------------------------------------------------|
-| SPC z e                   | /deletes all chars to the next occurrence of 'e'/            |
-| SPC u 2 SPC z e           | /deletes all chars to the second occurrence of 'e'/          |
-| SPC u - SPC z e           | /deletes all chars to the previous occurrence of 'e'/        |
-| SPC u - 2 SPC z e         | /deletes all chars to the second previous occurrence of 'e'/ |
-| SPC u 1 0 0 SPC u SPC z e | /deletes all chars to the 100th occurrence of 'e'/           |
-
-=TIP=: The universal argument (SPC u) can only take a single integer by default.  If you need to use a multi-digit number (like 100 in the last example in the table above), then you must terminate the universal argument with another 'SPC u' after typing the number.
-
-'zap-up-to-char' is an alternative command that does not zap the char specified.  It is binded to 'SPC Z'.  It can also be used in conjunction with the universal argument 'SPC u' in similar fashion to the the 'zap-to-char' examples above.
-
-=NOTE=:  Vim (evil mode) has similar functionality builtin.  You can delete to the next occurrence of 'e' by using 'dte' in normal.  To delete to the next occurrence of 'e' including the 'e', then you would use 'dfe'.  And you can modify 'dt' and 'df' by prefixing them with numbers, so '2dte' would delete to the second occurrence of 'e'.
-
-#+BEGIN_SRC emacs-lisp
-(map! :leader
-      :desc "Zap to char"    "z" #'zap-to-char
-      :desc "Zap up to char" "Z" #'zap-up-to-char)
-#+END_SRC
-
 * Enable Paredit mode in Clojure mode
 
 #+begin_src emacs-lisp
@@ -584,8 +528,3 @@ Emacs provides a 'zap-to-char' command that kills from the current point to a ch
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
 #+end_src
 
-* SQL
-
-#+begin_src emacs-lisp
-(setq doom-features '(sql))
-#+end_src

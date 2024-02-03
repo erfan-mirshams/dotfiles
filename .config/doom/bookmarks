@@ -2,11 +2,18 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored"
- (filename . "~/org/roam/20230826105522-emacs.org")
+(("ds"
+ (filename . "~/projects/ds/")
+ (front-context-string . "ca-1\n  drwxr-xr-")
+ (rear-context-string . "0K Oct 12 16:31 ")
+ (position . 74)
+ (last-modified 25927 48296 258574 241000))
+("org-capture-last-stored"
+ (filename . "~/org/roam/20231028215451-arxiv.org")
  (front-context-string)
- (rear-context-string . "8-26 Sat 10:55]\n")
- (position . 114))
+ (rear-context-string . "0-28 Sat 21:54]\n")
+ (position . 114)
+ (last-modified 25917 20982 291820 516000))
 ("oly"
  (filename . "~/projects/oly/")
  (front-context-string . "amali_dahom\n  dr")
@@ -28,8 +35,9 @@
  (rear-context-string . "0K Feb 21 13:30 ")
  (position . 354))
 ("uni"
- (filename . "~/documents/uni/term-2/")
- (front-context-string . "ap\n  drwxr-xr-x ")
- (rear-context-string . "0K Feb 12 20:47 ")
- (position . 132))
+ (filename . "~/documents/uni/term-3/")
+ (front-context-string . "eps\n  drwxr-xr-x")
+ (rear-context-string . "0K Sep 29 10:45 ")
+ (position . 82)
+ (last-modified 25878 49665 990631 556000))
 )

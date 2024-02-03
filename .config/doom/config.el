@@ -3,20 +3,16 @@
 (setq user-full-name "Erfan Mirshams"
       user-mail-address "erfanmirshams@protonmail.com")
 
-(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 26)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans" :size 30)
-      doom-big-font (font-spec :family "Dejavu Sans Mono" :size 40))
+(setq doom-font (font-spec :family "Inconsolata Nerd Font Mono" :size 28)
+      doom-variable-pitch-font (font-spec :family "Samim" :size 30)
+      doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 42))
 
-(setq doom-theme 'doom-oceanic-next)
+(setq doom-theme 'modus-vivendi)
 
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
 (setq display-line-numbers-type 'relative)
-
-(setq-default c-basic-offset 2)
-(add-hook 'c++-mode-hook (lambda () (setq-local c-basic-offset 2)))
-(add-hook 'c-mode-hook (lambda () (setq-local c-basic-offset 2)))
 
 (require 'org-faces)
 
@@ -112,8 +108,7 @@
                               ("jpg" . "sxiv")
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
-                              ("mp4" . "mpv")
-                              ("pdf" . "zathura")))
+                              ("mp4" . "mpv")))
 
 (evil-define-key 'normal peep-dired-mode-map
   (kbd "j") 'peep-dired-next-file
@@ -302,32 +297,6 @@ capture was not aborted."
                                                           "#+title: ${title}\n#+category: ${title}\n#+filetags: Project"
                                                           ("Tasks"))))))
 
-(defun my/org-roam-copy-todo-to-today ()
-  (interactive)
-  (let ((org-refile-keep t) ;; Set this to nil to delete the original!
-        (org-roam-dailies-capture-templates
-         '(("t" "tasks" entry "%?"
-            :if-new (file+head+olp "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n" ("Tasks")))))
-        (org-after-refile-insert-hook #'save-buffer)
-        today-file
-        pos)
-    (save-window-excursion
-      (org-roam-dailies--capture (current-time) t)
-      (setq today-file (buffer-file-name))
-      (setq pos (point)))
-
-    ;; Only refile if the target file is different than the current file
-    (unless (equal (file-truename today-file)
-                   (file-truename (buffer-file-name)))
-      (org-refile nil nil (list "Tasks" today-file nil pos)))))
-
-(add-to-list 'org-after-todo-state-change-hook
-             (lambda ()
-               (when (equal org-state "DONE")
-                 (my/org-roam-copy-todo-to-today))))
-
-
-
 (map! :leader
       (:prefix "n r"
        :desc "insert node immediate" "I" #'org-roam-node-insert-immediate
@@ -339,11 +308,5 @@ capture was not aborted."
        :desc "Winner redo" "<right>" #'winner-redo
        :desc "Winner undo" "<left>"  #'winner-undo))
 
-(map! :leader
-      :desc "Zap to char"    "z" #'zap-to-char
-      :desc "Zap up to char" "Z" #'zap-up-to-char)
-
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
-
-(setq doom-features '(sql))
