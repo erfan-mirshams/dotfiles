@@ -50,6 +50,7 @@
                                         ;(unpin! t)
 
                                         ; ox-hugo is an Org exporter backend that exports Org to Hugo-compatible Markdown (Blackfriday)
+(package! all-the-icons)
 (package! ox-hugo)
 (package! flycheck-aspell)
 (package! calfw)
@@ -77,3 +78,13 @@
 (package! catppuccin-theme)
 (package! verilog-mode)
 (package! verilog-ts-mode)
+(package! copilot
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el" "dist")))
+(package! kubernetes)
+(package! kubernetes-evil)
+(package! telega
+  :recipe (:files (:defaults
+                   "contrib/*.el"
+                   "etc"
+                   "server"
+                   "Makefile")))

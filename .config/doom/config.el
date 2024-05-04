@@ -310,3 +310,98 @@ capture was not aborted."
 
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook
+  (prog-mode . copilot-mode)
+  (copilot-mode . (lambda ()
+                    (setq-local copilot--indent-warning-printed-p t))))
+
+;; Set the keybinding for accepting Copilot completions to C-y
+(map! :map copilot-completion-map
+      "C-y" #'copilot-accept-completion
+      "C-S-y" #'copilot-accept-completion-by-word )
+
+(after! lsp-mode
+  ;; https://github.com/emacs-lsp/lsp-mode/issues/3577#issuecomment-1709232622
+  (delete 'lsp-terraform lsp-client-packages))
+
+(use-package! kubernetes
+  :ensure t
+  :commands (kubernetes-overview)
+  :config
+  (setq kubernetes-poll-frequency 3600
+        kubernetes-redraw-frequency 3600))
+(use-package! kubernetes-evil
+  :defer
+  :after kubernetes)
+(map! :leader
+      (:prefix "o"
+        :desc "Kubernetes" "k" 'kubernetes-overview))
+
+(use-package! telega
+  :defer t
+  :custom
+  (telega-directory (expand-file-name "telega" doom-cache-dir))
+  (telega-video-player-command '(concat "mpv"
+                                        (when telega-ffplay-media-timestamp
+                                          (format " --start=%f" telega-ffplay-media-timestamp))))
+  (telega-completing-read-function completing-read-function)
+  (telega-use-docker t))
+(map! (:leader
+       :desc "Telegram" :mv "o m" #'erfan/=telega)
+      (:after telega
+       :map telega-root-mode-map
+       :n "q" #'erfan/=telega-kill))
+(after! evil-snipe
+  (add-to-list 'evil-snipe-disabled-modes 'telega-root-mode))
+(after! telega
+  (set-company-backend! 'telega-chat-mode
+    '(company-ispell
+      company-dabbrev
+      telega-company-telegram-emoji
+      telega-company-username
+      telega-company-botcmd
+      telega-company-hashtag)))
+(add-hook! telega-load
+           ;; core
+           #'telega-mode-line-mode
+           #'global-telega-squash-message-mode
+           #'telega-notifications-mode
+           #'telega-autoplay-mode
+
+           ;; contrib
+           #'global-telega-url-shorten-mode
+           #'global-telega-mnz-mode
+           #'telega-alert-mode
+           #'telega-transient-mode
+           #'telega-status-history-mode)
+(add-hook! '(telega-root-mode-hook telega-chat-mode-hook)
+           #'hl-line-mode)
+(add-hook! kill-emacs
+  (when (and (boundp 'telega-root-buffer-name)
+             (get-buffer telega-root-buffer-name))
+    (telega-kill t)))
+(after! telega
+  (set-popup-rule! "\\`\\*Telega.+"
+    :ignore t))
+;;; $DOOMDIR/autoload/telega.el -*- lexical-binding: t; -*-
+(defvar +telega-workspace-name "Telega")
+
+;;;###autoload
+(defun erfan/=telega (&optional arg)
+  "Like `telega', but opens the buffer in it's own workspace."
+  (interactive "P")
+  (+workspace-switch +telega-workspace-name t)
+  (unless (memq (buffer-local-value 'major-mode (window-buffer (selected-window)))
+                '(telega-root-mode telega-chat-mode telega-image-mode))
+    (doom/switch-to-scratch-buffer)
+    (telega arg)
+    (+workspace/display)))
+;;;###autoload
+(defun erfan/=telega-kill (&optional args)
+  "Like `telega-kill', but deletes the workspace associated with `+telega-workspace-name' if it exists."
+  (interactive "P")
+  (telega-kill args)
+  (+workspace-delete +telega-workspace-name))
