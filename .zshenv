@@ -1,5 +1,5 @@
 # Adding .local/bin to $PATH
-export PATH=$PATH:/home/erfan/.local/share/go/bin:/home/erfan/.local/share/cargo/bin:/opt/jetbrains-toolbox-2.0.4.17212:/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar
+export PATH=$PATH:/home/erfan/.local/share/go/bin:/home/erfan/.local/share/cargo/bin:/opt/jetbrains-toolbox-2.0.4.17212:/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar:/home/erfan/.config/pyenv
 
 # Default programs
 export EDITOR="nvim"
@@ -36,4 +36,4 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export LEIN_HOME="$XDG_DATA_HOME"/lein 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo 
 export LESSHISTFILE="-"
-
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv

@@ -1,0 +1,386 @@
+12:33:21.121: [Safe Mode] Unclean shutdown detected!
+12:33:23.410: [Safe Mode] User elected to launch normally.
+12:33:23.474: Using EGL/X11
+12:33:23.475: CPU Name: 12th Gen Intel(R) Core(TM) i7-1260P
+12:33:23.475: CPU Speed: 567.140MHz
+12:33:23.477: Physical Cores: 12, Logical Cores: 16
+12:33:23.477: Physical Memory: 15699MB Total, 13350MB Free
+12:33:23.477: Kernel Version: Linux 6.8.5-arch1-1
+12:33:23.477: Distribution: "Arch Linux" Unknown
+12:33:23.477: Session Type: tty
+12:33:23.477: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+12:33:23.482: Qt Version: 6.7.0 (runtime), 6.6.3 (compiled)
+12:33:23.482: Portable mode: false
+12:33:23.527: OBS 30.1.1-1 (linux)
+12:33:23.527: ---------------------------------
+12:33:23.528: ---------------------------------
+12:33:23.528: audio settings reset:
+12:33:23.528: 	samples per sec: 48000
+12:33:23.528: 	speakers:        2
+12:33:23.528: 	max buffering:   960 milliseconds
+12:33:23.528: 	buffering type:  dynamically increasing
+12:33:23.532: ---------------------------------
+12:33:23.532: Initializing OpenGL...
+12:33:23.606: Loading up OpenGL on adapter Intel Mesa Intel(R) Graphics (ADL GT2)
+12:33:23.606: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.5-arch1.1, shading language 4.60
+12:33:23.634: ---------------------------------
+12:33:23.634: video settings reset:
+12:33:23.634: 	base resolution:   1920x1080
+12:33:23.634: 	output resolution: 1280x720
+12:33:23.634: 	downscale filter:  Bicubic
+12:33:23.634: 	fps:               30/1
+12:33:23.634: 	format:            NV12
+12:33:23.634: 	YUV mode:          Rec. 709/Partial
+12:33:23.634: NV12 texture support enabled
+12:33:23.634: P010 texture support not available
+12:33:23.641: Audio monitoring device:
+12:33:23.641: 	name: Default
+12:33:23.641: 	id: default
+12:33:23.641: ---------------------------------
+12:33:23.649: Failed to load 'en-US' text for module: 'decklink-captions.so'
+12:33:23.655: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+12:33:23.662: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+12:33:23.662: Failed to initialize module 'decklink.so'
+12:33:23.778: [pipewire] No captures available
+12:33:23.885: NVENC supported
+12:33:23.907: VAAPI: API version 1.21
+12:33:23.907: FFmpeg VAAPI H264 encoding supported
+12:33:23.909: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+12:33:23.909: FFmpeg VAAPI AV1 encoding not supported
+12:33:23.911: FFmpeg VAAPI HEVC encoding supported
+12:33:24.009: ---------------------------------
+12:33:24.009:   Loaded Modules:
+12:33:24.009:     text-freetype2.so
+12:33:24.009:     rtmp-services.so
+12:33:24.009:     obs-x264.so
+12:33:24.009:     obs-webrtc.so
+12:33:24.009:     obs-vst.so
+12:33:24.009:     obs-transitions.so
+12:33:24.009:     obs-qsv11.so
+12:33:24.009:     obs-outputs.so
+12:33:24.009:     obs-libfdk.so
+12:33:24.009:     obs-filters.so
+12:33:24.009:     obs-ffmpeg.so
+12:33:24.009:     linux-v4l2.so
+12:33:24.009:     linux-pulseaudio.so
+12:33:24.009:     linux-pipewire.so
+12:33:24.009:     linux-jack.so
+12:33:24.009:     linux-capture.so
+12:33:24.009:     linux-alsa.so
+12:33:24.009:     image-source.so
+12:33:24.009:     frontend-tools.so
+12:33:24.009:     decklink-output-ui.so
+12:33:24.009:     decklink-captions.so
+12:33:24.009: ---------------------------------
+12:33:24.009: QWidget::setTabOrder: 'first' and 'second' must be in the same window
+12:33:24.010: ==== Startup complete ===============================================
+12:33:24.063: All scene data cleared
+12:33:24.063: ------------------------------------------------
+12:33:24.074: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.4) 15.0.0'
+12:33:24.074: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+12:33:24.075: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink.monitor' (default)
+12:33:24.075: [Loaded global audio device]: 'Desktop Audio'
+12:33:24.076: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.4) 15.0.0'
+12:33:24.077: pulse-input: Audio format: s24-32le, 48000 Hz, 2 channels
+12:33:24.077: pulse-input: Sample format s24-32le not supported by OBS,using float32le instead for recording
+12:33:24.077: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__source' (default)
+12:33:24.077: [Loaded global audio device]: 'Mic/Aux'
+12:33:24.079: Switched to scene 'Scene'
+12:33:24.079: ------------------------------------------------
+12:33:24.079: Loaded scenes:
+12:33:24.079: - scene 'Scene':
+12:33:24.079: ------------------------------------------------
+12:33:24.168: Unhandled client message:  "_NET_WM_NAME"
+12:33:24.168: Unhandled client message:  "_NET_WM_NAME"
+12:33:24.168: Unhandled client message:  "_NET_WM_NAME"
+12:33:24.168: Unhandled client message:  "_NET_WM_NAME"
+12:33:24.723: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+12:33:24.723: 
+12:33:57.132: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+12:33:57.132: 	title: OBS 30.1.1-1 - Profile: Untitled - Scenes: Untitled
+12:33:57.132: 	class: obs
+12:33:57.132: 
+12:33:57.140: User added source 'Window Capture (Xcomposite)' (xcomposite_input) to scene 'Scene'
+12:33:57.174: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+12:33:57.174: 	title: OBS 30.1.1-1 - Profile: Untitled - Scenes: Untitled
+12:33:57.174: 	class: obs
+12:33:57.174: 
+12:34:03.907: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+12:34:03.907: 	title: OBS 30.1.1-1 - Profile: Untitled - Scenes: Untitled
+12:34:03.907: 	class: obs
+12:34:03.907: 
+12:34:09.510: User Removed source 'Window Capture (Xcomposite)' (xcomposite_input) from scene 'Scene'
+12:34:16.122: v4l2-input: Start capture from 
+12:34:16.122: v4l2-input: Unable to open device
+12:34:16.122: v4l2-input: Initialization failed, errno: No such file or directory
+12:34:16.127: User added source 'Video Capture Device (V4L2)' (v4l2_input) to scene 'Scene'
+12:34:25.930: User Removed source 'Video Capture Device (V4L2)' (v4l2_input) from scene 'Scene'
+12:34:31.092: xshm-input: Geometry 2560x1440 @ 0,0
+12:34:31.105: User added source 'Screen Capture (XSHM)' (xshm_input) to scene 'Scene'
+12:34:32.577: xshm-input: Geometry 2560x1440 @ 0,0
+12:34:33.761: ---------------------------------
+12:34:33.761: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+12:34:33.761: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+12:34:33.761: 	rate_control: CBR
+12:34:33.761: 	bitrate:      2500
+12:34:33.761: 	cqp:          0
+12:34:33.761: 	keyint:       -1
+12:34:33.761: 	preset:       p5
+12:34:33.761: 	tuning:       hq
+12:34:33.761: 	multipass:    qres
+12:34:33.761: 	profile:      high
+12:34:33.761: 	width:        1280
+12:34:33.761: 	height:       720
+12:34:33.761: 	b-frames:     2
+12:34:33.761: 	psycho-aq:    1
+12:34:33.761: 	GPU:          0
+12:34:33.761: 
+12:34:33.969: libfdk_aac encoder created
+12:34:33.969: libfdk_aac bitrate: 160, channels: 2
+12:34:33.969: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+12:34:33.969: 	movflags=frag_keyframe+empty_moov+delay_moov
+12:34:33.976: ==== Recording Start ===============================================
+12:34:33.976: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 12-34-33.mp4'...
+12:34:46.303: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 12-34-33.mp4' stopped
+12:34:46.303: Output 'simple_file_output': stopping
+12:34:46.303: Output 'simple_file_output': Total frames output: 356
+12:34:46.303: Output 'simple_file_output': Total drawn frames: 369
+12:34:46.304: ==== Recording Stop ================================================
+12:34:46.459: libfdk_aac encoder destroyed
+12:35:52.205: User Removed source 'Screen Capture (XSHM)' (xshm_input) from scene 'Scene'
+12:36:01.127: xshm-input: Geometry 2560x1440 @ 0,0
+12:36:01.139: User added source 'Screen Capture (XSHM)' (xshm_input) to scene 'Scene'
+12:39:07.420: ---------------------------------
+12:39:07.420: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+12:39:07.420: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+12:39:07.420: 	rate_control: CBR
+12:39:07.420: 	bitrate:      2500
+12:39:07.420: 	cqp:          0
+12:39:07.420: 	keyint:       -1
+12:39:07.420: 	preset:       p5
+12:39:07.420: 	tuning:       hq
+12:39:07.420: 	multipass:    qres
+12:39:07.420: 	profile:      high
+12:39:07.420: 	width:        1280
+12:39:07.420: 	height:       720
+12:39:07.420: 	b-frames:     2
+12:39:07.420: 	psycho-aq:    1
+12:39:07.420: 	GPU:          0
+12:39:07.420: 
+12:39:07.494: libfdk_aac encoder created
+12:39:07.494: libfdk_aac bitrate: 160, channels: 2
+12:39:07.494: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+12:39:07.494: 	movflags=frag_keyframe+empty_moov+delay_moov
+12:39:07.495: ==== Recording Start ===============================================
+12:39:07.495: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 12-39-07.mp4'...
+12:39:20.126: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 12-39-07.mp4' stopped
+12:39:20.126: Output 'simple_file_output': stopping
+12:39:20.126: Output 'simple_file_output': Total frames output: 367
+12:39:20.126: Output 'simple_file_output': Total drawn frames: 379
+12:39:20.128: ==== Recording Stop ================================================
+12:39:20.235: libfdk_aac encoder destroyed
+14:09:32.108: ---------------------------------
+14:09:32.108: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+14:09:32.108: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+14:09:32.108: 	rate_control: CBR
+14:09:32.108: 	bitrate:      2500
+14:09:32.108: 	cqp:          0
+14:09:32.108: 	keyint:       -1
+14:09:32.108: 	preset:       p5
+14:09:32.108: 	tuning:       hq
+14:09:32.108: 	multipass:    qres
+14:09:32.108: 	profile:      high
+14:09:32.108: 	width:        1280
+14:09:32.108: 	height:       720
+14:09:32.108: 	b-frames:     2
+14:09:32.108: 	psycho-aq:    1
+14:09:32.108: 	GPU:          0
+14:09:32.108: 
+14:09:32.189: libfdk_aac encoder created
+14:09:32.189: libfdk_aac bitrate: 160, channels: 2
+14:09:32.190: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+14:09:32.190: 	movflags=frag_keyframe+empty_moov+delay_moov
+14:09:32.191: ==== Recording Start ===============================================
+14:09:32.191: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 14-09-32.mp4'...
+14:09:37.125: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 14-09-32.mp4' stopped
+14:09:37.126: Output 'simple_file_output': stopping
+14:09:37.126: Output 'simple_file_output': Total frames output: 136
+14:09:37.126: Output 'simple_file_output': Total drawn frames: 148
+14:09:37.126: ==== Recording Stop ================================================
+14:09:37.177: libfdk_aac encoder destroyed
+14:10:19.333: ---------------------------------
+14:10:19.333: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+14:10:19.333: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+14:10:19.333: 	rate_control: CBR
+14:10:19.333: 	bitrate:      2500
+14:10:19.333: 	cqp:          0
+14:10:19.333: 	keyint:       -1
+14:10:19.333: 	preset:       p5
+14:10:19.333: 	tuning:       hq
+14:10:19.333: 	multipass:    qres
+14:10:19.333: 	profile:      high
+14:10:19.333: 	width:        1280
+14:10:19.333: 	height:       720
+14:10:19.333: 	b-frames:     2
+14:10:19.333: 	psycho-aq:    1
+14:10:19.333: 	GPU:          0
+14:10:19.333: 
+14:10:19.415: libfdk_aac encoder created
+14:10:19.415: libfdk_aac bitrate: 160, channels: 2
+14:10:19.415: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+14:10:19.415: 	movflags=frag_keyframe+empty_moov+delay_moov
+14:10:19.416: ==== Recording Start ===============================================
+14:10:19.416: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 14-10-19.mp4'...
+14:29:46.387: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 14-10-19.mp4' stopped
+14:29:46.387: Output 'simple_file_output': stopping
+14:29:46.387: Output 'simple_file_output': Total frames output: 34996
+14:29:46.387: Output 'simple_file_output': Total drawn frames: 35009
+14:29:46.388: ==== Recording Stop ================================================
+14:29:46.662: libfdk_aac encoder destroyed
+14:38:14.970: ---------------------------------
+14:38:14.970: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+14:38:14.970: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+14:38:14.970: 	rate_control: CBR
+14:38:14.970: 	bitrate:      2500
+14:38:14.970: 	cqp:          0
+14:38:14.970: 	keyint:       -1
+14:38:14.970: 	preset:       p5
+14:38:14.970: 	tuning:       hq
+14:38:14.970: 	multipass:    qres
+14:38:14.970: 	profile:      high
+14:38:14.970: 	width:        1280
+14:38:14.970: 	height:       720
+14:38:14.970: 	b-frames:     2
+14:38:14.970: 	psycho-aq:    1
+14:38:14.970: 	GPU:          0
+14:38:14.970: 
+14:38:15.050: libfdk_aac encoder created
+14:38:15.050: libfdk_aac bitrate: 160, channels: 2
+14:38:15.050: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+14:38:15.050: 	movflags=frag_keyframe+empty_moov+delay_moov
+14:38:15.051: ==== Recording Start ===============================================
+14:38:15.051: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 14-38-14.mp4'...
+14:40:46.136: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 14-38-14.mp4' stopped
+14:40:46.136: Output 'simple_file_output': stopping
+14:40:46.136: Output 'simple_file_output': Total frames output: 4520
+14:40:46.136: Output 'simple_file_output': Total drawn frames: 4532
+14:40:46.136: ==== Recording Stop ================================================
+14:40:46.295: libfdk_aac encoder destroyed
+14:57:54.731: ---------------------------------
+14:57:54.732: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+14:57:54.732: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+14:57:54.732: 	rate_control: CBR
+14:57:54.732: 	bitrate:      2500
+14:57:54.732: 	cqp:          0
+14:57:54.732: 	keyint:       -1
+14:57:54.732: 	preset:       p5
+14:57:54.732: 	tuning:       hq
+14:57:54.732: 	multipass:    qres
+14:57:54.732: 	profile:      high
+14:57:54.732: 	width:        1280
+14:57:54.732: 	height:       720
+14:57:54.732: 	b-frames:     2
+14:57:54.732: 	psycho-aq:    1
+14:57:54.732: 	GPU:          0
+14:57:54.732: 
+14:57:54.815: libfdk_aac encoder created
+14:57:54.815: libfdk_aac bitrate: 160, channels: 2
+14:57:54.815: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+14:57:54.815: 	movflags=frag_keyframe+empty_moov+delay_moov
+14:57:54.816: ==== Recording Start ===============================================
+14:57:54.816: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 14-57-54.mp4'...
+14:58:29.796: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 14-57-54.mp4' stopped
+14:58:29.796: Output 'simple_file_output': stopping
+14:58:29.796: Output 'simple_file_output': Total frames output: 1037
+14:58:29.796: Output 'simple_file_output': Total drawn frames: 1049
+14:58:29.797: ==== Recording Stop ================================================
+14:58:30.060: libfdk_aac encoder destroyed
+14:58:59.946: ---------------------------------
+14:58:59.947: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+14:58:59.947: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+14:58:59.947: 	rate_control: CBR
+14:58:59.947: 	bitrate:      2500
+14:58:59.947: 	cqp:          0
+14:58:59.947: 	keyint:       -1
+14:58:59.947: 	preset:       p5
+14:58:59.947: 	tuning:       hq
+14:58:59.947: 	multipass:    qres
+14:58:59.947: 	profile:      high
+14:58:59.947: 	width:        1280
+14:58:59.947: 	height:       720
+14:58:59.947: 	b-frames:     2
+14:58:59.947: 	psycho-aq:    1
+14:58:59.947: 	GPU:          0
+14:58:59.947: 
+14:59:00.019: libfdk_aac encoder created
+14:59:00.019: libfdk_aac bitrate: 160, channels: 2
+14:59:00.020: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+14:59:00.020: 	movflags=frag_keyframe+empty_moov+delay_moov
+14:59:00.022: ==== Recording Start ===============================================
+14:59:00.022: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 14-58-59.mp4'...
+15:07:15.280: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 14-58-59.mp4' stopped
+15:07:15.280: Output 'simple_file_output': stopping
+15:07:15.280: Output 'simple_file_output': Total frames output: 14845
+15:07:15.280: Output 'simple_file_output': Total drawn frames: 14856 (14858 attempted)
+15:07:15.280: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 2 (0.0%)
+15:07:15.281: ==== Recording Stop ================================================
+15:07:15.514: libfdk_aac encoder destroyed
+15:15:21.955: ---------------------------------
+15:15:21.955: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+15:15:21.955: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+15:15:21.955: 	rate_control: CBR
+15:15:21.955: 	bitrate:      2500
+15:15:21.955: 	cqp:          0
+15:15:21.955: 	keyint:       -1
+15:15:21.955: 	preset:       p5
+15:15:21.955: 	tuning:       hq
+15:15:21.955: 	multipass:    qres
+15:15:21.955: 	profile:      high
+15:15:21.955: 	width:        1280
+15:15:21.955: 	height:       720
+15:15:21.955: 	b-frames:     2
+15:15:21.955: 	psycho-aq:    1
+15:15:21.955: 	GPU:          0
+15:15:21.955: 
+15:15:22.036: libfdk_aac encoder created
+15:15:22.036: libfdk_aac bitrate: 160, channels: 2
+15:15:22.037: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+15:15:22.037: 	movflags=frag_keyframe+empty_moov+delay_moov
+15:15:22.037: ==== Recording Start ===============================================
+15:15:22.037: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 15-15-21.mp4'...
+15:15:30.859: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 15-15-21.mp4' stopped
+15:15:30.859: Output 'simple_file_output': stopping
+15:15:30.859: Output 'simple_file_output': Total frames output: 253
+15:15:30.859: Output 'simple_file_output': Total drawn frames: 265
+15:15:30.859: ==== Recording Stop ================================================
+15:15:31.035: libfdk_aac encoder destroyed
+15:16:00.215: ---------------------------------
+15:16:00.216: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+15:16:00.216: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+15:16:00.216: 	rate_control: CBR
+15:16:00.216: 	bitrate:      2500
+15:16:00.216: 	cqp:          0
+15:16:00.216: 	keyint:       -1
+15:16:00.216: 	preset:       p5
+15:16:00.216: 	tuning:       hq
+15:16:00.216: 	multipass:    qres
+15:16:00.216: 	profile:      high
+15:16:00.216: 	width:        1280
+15:16:00.216: 	height:       720
+15:16:00.216: 	b-frames:     2
+15:16:00.216: 	psycho-aq:    1
+15:16:00.216: 	GPU:          0
+15:16:00.216: 
+15:16:00.338: libfdk_aac encoder created
+15:16:00.338: libfdk_aac bitrate: 160, channels: 2
+15:16:00.338: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+15:16:00.338: 	movflags=frag_keyframe+empty_moov+delay_moov
+15:16:00.339: ==== Recording Start ===============================================
+15:16:00.339: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-17 15-16-00.mp4'...
+15:23:18.289: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-17 15-16-00.mp4' stopped
+15:23:18.289: Output 'simple_file_output': stopping
+15:23:18.289: Output 'simple_file_output': Total frames output: 13126
+15:23:18.289: Output 'simple_file_output': Total drawn frames: 13138 (13139 attempted)
+15:23:18.289: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.0%)
+15:23:18.289: ==== Recording Stop ================================================
+15:23:18.371: libfdk_aac encoder destroyed

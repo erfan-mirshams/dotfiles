@@ -1,0 +1,2 @@
+#!/bin/sh
+st -e devour ~/applications/intel-fpga/modelsim_ase/bin/vsim

@@ -638,3 +638,21 @@ Winner mode has been included with GNU Emacs since version 20.  This is a global
   (telega-kill args)
   (+workspace-delete +telega-workspace-name))
 #+end_src
+
+* Python debugging environment
+#+begin_src emacs-lisp
+
+(use-package python-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :custom
+  (dap-python-debugger 'debugpy)
+  :config
+  (require 'dap-python))
+
+#+end_src
+
+* Go debugging environment
+#+begin_src emacs-lisp
+(require 'dap-dlv-go)
+#+end_src

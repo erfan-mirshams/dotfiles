@@ -17,3 +17,4 @@
  )
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'projectile-ag 'disabled nil)

@@ -405,3 +405,13 @@ capture was not aborted."
   (interactive "P")
   (telega-kill args)
   (+workspace-delete +telega-workspace-name))
+
+(use-package python-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :custom
+  (dap-python-debugger 'debugpy)
+  :config
+  (require 'dap-python))
+
+(require 'dap-dlv-go)

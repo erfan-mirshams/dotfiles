@@ -92,7 +92,7 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
 # Initializing keychain
-eval $(keychain --eval --quiet --confhost github codeberg)
+eval $(keychain --eval --quiet --confhost github codeberg divar-git sotoon)
 
 # Initializing prompt
 autoload -Uz promptinit
@@ -100,6 +100,23 @@ promptinit
 
 # Set prompt
 eval "$(starship init zsh)"
+
+# Load syntax highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+
+# Initializing pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
+
+_pyenv_virtualenv_hook() {
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  unset -f _pyenv_virtualenv_hook
+}
+
+typeset -a +U precmd_functions
+precmd_functions+=(_pyenv_virtualenv_hook)
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null

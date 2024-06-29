@@ -22,10 +22,10 @@ call vundle#begin()
     "themes
     Plugin 'flazz/vim-colorschemes'
     Plugin 'mhartington/oceanic-next'
+    Plugin 'ThePrimeagen/vim-be-good'
 call vundle#end()
 filetype plugin indent on
 
-colo OceanicNext
 hi Normal guibg=NONE ctermbg=NONE
 set noshowmode
 

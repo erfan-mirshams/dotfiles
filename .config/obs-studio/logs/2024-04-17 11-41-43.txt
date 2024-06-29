@@ -1,0 +1,45 @@
+11:41:43.393: Using EGL/X11
+11:41:43.393: CPU Name: 12th Gen Intel(R) Core(TM) i7-1260P
+11:41:43.393: CPU Speed: 400.000MHz
+11:41:43.394: Physical Cores: 12, Logical Cores: 16
+11:41:43.394: Physical Memory: 15699MB Total, 3566MB Free
+11:41:43.394: Kernel Version: Linux 6.8.5-arch1-1
+11:41:43.394: Distribution: "Arch Linux" Unknown
+11:41:43.394: Session Type: tty
+11:41:43.394: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+11:41:43.394: Qt Version: 6.7.0 (runtime), 6.6.3 (compiled)
+11:41:43.394: Portable mode: false
+11:41:43.425: OBS 30.1.1-1 (linux)
+11:41:43.425: ---------------------------------
+11:41:43.425: ---------------------------------
+11:41:43.425: audio settings reset:
+11:41:43.425: 	samples per sec: 48000
+11:41:43.425: 	speakers:        2
+11:41:43.425: 	max buffering:   960 milliseconds
+11:41:43.425: 	buffering type:  dynamically increasing
+11:41:43.427: ---------------------------------
+11:41:43.427: Initializing OpenGL...
+11:41:43.481: Loading up OpenGL on adapter Intel Mesa Intel(R) Graphics (ADL GT2)
+11:41:43.481: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.5-arch1.1, shading language 4.60
+11:41:43.501: ---------------------------------
+11:41:43.501: video settings reset:
+11:41:43.501: 	base resolution:   1920x1080
+11:41:43.501: 	output resolution: 1280x720
+11:41:43.501: 	downscale filter:  Bicubic
+11:41:43.501: 	fps:               30/1
+11:41:43.501: 	format:            NV12
+11:41:43.501: 	YUV mode:          Rec. 709/Partial
+11:41:43.501: NV12 texture support enabled
+11:41:43.501: P010 texture support not available
+11:41:43.508: Audio monitoring device:
+11:41:43.508: 	name: Default
+11:41:43.508: 	id: default
+11:41:43.508: ---------------------------------
+11:41:43.514: Failed to load 'en-US' text for module: 'decklink-captions.so'
+11:41:43.519: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+11:41:43.527: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+11:41:43.527: Failed to initialize module 'decklink.so'
+11:41:43.618: [pipewire] No captures available
+11:41:43.662: NVENC supported
+11:41:43.664: VAAPI: API version 1.21
+11:41:43.665: FFmpeg VAAPI H264 encoding supported

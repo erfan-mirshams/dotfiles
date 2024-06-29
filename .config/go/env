@@ -1,0 +1,2 @@
+GOPRIVATE=git.divar.cloud
+GOPROXY=https://proxy.golang.org,direct

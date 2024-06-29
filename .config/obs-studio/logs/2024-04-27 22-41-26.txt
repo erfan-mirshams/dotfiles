@@ -1,0 +1,783 @@
+22:41:26.150: [Safe Mode] Unclean shutdown detected!
+22:41:28.723: [Safe Mode] User elected to launch normally.
+22:41:28.758: Using EGL/X11
+22:41:28.758: CPU Name: 12th Gen Intel(R) Core(TM) i7-1260P
+22:41:28.758: CPU Speed: 1531.406MHz
+22:41:28.759: Physical Cores: 12, Logical Cores: 16
+22:41:28.759: Physical Memory: 15699MB Total, 9547MB Free
+22:41:28.759: Kernel Version: Linux 6.8.7-arch1-1
+22:41:28.759: Distribution: "Arch Linux" Unknown
+22:41:28.759: Session Type: tty
+22:41:28.759: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+22:41:28.803: Qt Version: 6.7.0 (runtime), 6.6.3 (compiled)
+22:41:28.803: Portable mode: false
+22:41:28.840: OBS 30.1.1-1 (linux)
+22:41:28.840: ---------------------------------
+22:41:28.841: ---------------------------------
+22:41:28.841: audio settings reset:
+22:41:28.841: 	samples per sec: 48000
+22:41:28.841: 	speakers:        2
+22:41:28.841: 	max buffering:   960 milliseconds
+22:41:28.841: 	buffering type:  dynamically increasing
+22:41:28.845: ---------------------------------
+22:41:28.846: Initializing OpenGL...
+22:41:28.909: Loading up OpenGL on adapter Intel Mesa Intel(R) Graphics (ADL GT2)
+22:41:28.909: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.5-arch1.1, shading language 4.60
+22:41:28.937: ---------------------------------
+22:41:28.937: video settings reset:
+22:41:28.937: 	base resolution:   1920x1080
+22:41:28.937: 	output resolution: 1280x720
+22:41:28.937: 	downscale filter:  Bicubic
+22:41:28.937: 	fps:               30/1
+22:41:28.937: 	format:            NV12
+22:41:28.937: 	YUV mode:          Rec. 709/Partial
+22:41:28.937: NV12 texture support enabled
+22:41:28.937: P010 texture support not available
+22:41:28.944: Audio monitoring device:
+22:41:28.944: 	name: Default
+22:41:28.944: 	id: default
+22:41:28.944: ---------------------------------
+22:41:28.951: Failed to load 'en-US' text for module: 'decklink-captions.so'
+22:41:28.958: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+22:41:28.965: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+22:41:28.965: Failed to initialize module 'decklink.so'
+22:41:29.091: [pipewire] No captures available
+22:41:29.155: NVENC supported
+22:41:29.157: VAAPI: API version 1.21
+22:41:29.157: FFmpeg VAAPI H264 encoding supported
+22:41:29.158: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+22:41:29.158: FFmpeg VAAPI AV1 encoding not supported
+22:41:29.160: FFmpeg VAAPI HEVC encoding supported
+22:41:29.257: ---------------------------------
+22:41:29.257:   Loaded Modules:
+22:41:29.257:     text-freetype2.so
+22:41:29.257:     rtmp-services.so
+22:41:29.257:     obs-x264.so
+22:41:29.257:     obs-webrtc.so
+22:41:29.257:     obs-vst.so
+22:41:29.257:     obs-transitions.so
+22:41:29.257:     obs-qsv11.so
+22:41:29.257:     obs-outputs.so
+22:41:29.257:     obs-libfdk.so
+22:41:29.257:     obs-filters.so
+22:41:29.257:     obs-ffmpeg.so
+22:41:29.257:     linux-v4l2.so
+22:41:29.257:     linux-pulseaudio.so
+22:41:29.257:     linux-pipewire.so
+22:41:29.257:     linux-jack.so
+22:41:29.257:     linux-capture.so
+22:41:29.257:     linux-alsa.so
+22:41:29.257:     image-source.so
+22:41:29.257:     frontend-tools.so
+22:41:29.257:     decklink-output-ui.so
+22:41:29.257:     decklink-captions.so
+22:41:29.257: ---------------------------------
+22:41:29.257: QWidget::setTabOrder: 'first' and 'second' must be in the same window
+22:41:29.258: ==== Startup complete ===============================================
+22:41:29.290: All scene data cleared
+22:41:29.290: ------------------------------------------------
+22:41:29.297: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.5) 15.0.0'
+22:41:29.297: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+22:41:29.297: pulse-input: Started recording from 'bluez_output.F4_2B_8C_81_47_E1.1.monitor' (default)
+22:41:29.297: [Loaded global audio device]: 'Desktop Audio'
+22:41:29.298: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.5) 15.0.0'
+22:41:29.298: pulse-input: Audio format: float32le, 48000 Hz, 1 channels
+22:41:29.298: pulse-input: Started recording from 'bluez_input.F4:2B:8C:81:47:E1' (default)
+22:41:29.298: [Loaded global audio device]: 'Mic/Aux'
+22:41:29.300: xshm-input: Geometry 2560x1440 @ 0,0
+22:41:29.312: Switched to scene 'Scene'
+22:41:29.312: ------------------------------------------------
+22:41:29.312: Loaded scenes:
+22:41:29.312: - scene 'Scene':
+22:41:29.312:     - source: 'Screen Capture (XSHM)' (xshm_input)
+22:41:29.312: ------------------------------------------------
+22:41:29.495: Unhandled client message:  "_NET_WM_NAME"
+22:41:29.495: Unhandled client message:  "_NET_WM_NAME"
+22:41:29.496: Unhandled client message:  "_NET_WM_NAME"
+22:41:29.496: Unhandled client message:  "_NET_WM_NAME"
+22:41:29.866: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+22:41:29.866: 
+22:41:33.699: ---------------------------------
+22:41:33.699: [FFmpeg NVENC encoder: 'simple_video_stream'] settings:
+22:41:33.699: 	encoder:      NVIDIA NVENC H.264 (FFmpeg)
+22:41:33.699: 	rate_control: CBR
+22:41:33.699: 	bitrate:      2500
+22:41:33.699: 	cqp:          0
+22:41:33.699: 	keyint:       -1
+22:41:33.699: 	preset:       p5
+22:41:33.699: 	tuning:       hq
+22:41:33.699: 	multipass:    qres
+22:41:33.699: 	profile:      high
+22:41:33.699: 	width:        1280
+22:41:33.699: 	height:       720
+22:41:33.699: 	b-frames:     2
+22:41:33.699: 	psycho-aq:    1
+22:41:33.699: 	GPU:          0
+22:41:33.699: 
+22:41:33.929: libfdk_aac encoder created
+22:41:33.929: libfdk_aac bitrate: 160, channels: 2
+22:41:33.929: [ffmpeg muxer: 'simple_file_output'] Using muxer settings:
+22:41:33.929: 	movflags=frag_keyframe+empty_moov+delay_moov
+22:41:33.937: ==== Recording Start ===============================================
+22:41:33.937: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/erfan/2024-04-27 22-41-33.mp4'...
+22:41:43.035: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/erfan/2024-04-27 22-41-33.mp4' stopped
+22:41:43.035: Output 'simple_file_output': stopping
+22:41:43.035: Output 'simple_file_output': Total frames output: 261
+22:41:43.035: Output 'simple_file_output': Total drawn frames: 273
+22:41:43.036: ==== Recording Stop ================================================
+22:41:43.165: libfdk_aac encoder destroyed
+22:44:07.427:   OpenType support missing for "Open Sans", script 11
+22:44:07.429:   OpenType support missing for "DejaVu Sans", script 11
+22:44:07.429:   OpenType support missing for "Luxi Sans", script 11
+22:44:07.429:   OpenType support missing for "Nimbus Sans", script 11
+22:44:07.430:   OpenType support missing for "URW Gothic", script 11
+22:44:07.430:   OpenType support missing for "Nimbus Sans Narrow", script 11
+22:44:07.430:   OpenType support missing for "Font Awesome 6 Brands", script 11
+22:44:07.430:   OpenType support missing for "Font Awesome 6 Free", script 11
+22:44:07.430:   OpenType support missing for "Font Awesome v4 Compatibility", script 11
+22:44:07.430:   OpenType support missing for "Vazirmatn FD", script 11
+22:44:07.431:   OpenType support missing for "Vazirmatn RD FD", script 11
+22:44:07.431:   OpenType support missing for "Vazirmatn RD", script 11
+22:44:07.431:   OpenType support missing for "Vazirmatn RD UI", script 11
+22:44:07.431:   OpenType support missing for "Vazirmatn", script 11
+22:44:07.431:   OpenType support missing for "Vazirmatn UI FD", script 11
+22:44:07.432:   OpenType support missing for "Vazirmatn UI", script 11
+22:44:07.432:   OpenType support missing for "Vazirmatn FD NL", script 11
+22:44:07.432:   OpenType support missing for "Vazirmatn NL", script 11
+22:44:07.432:   OpenType support missing for "Vazirmatn RD FD NL", script 11
+22:44:07.433:   OpenType support missing for "Vazirmatn RD NL", script 11
+22:44:07.433:   OpenType support missing for "Vazirmatn RD UI FD NL", script 11
+22:44:07.433:   OpenType support missing for "Vazirmatn RD UI NL", script 11
+22:44:07.433:   OpenType support missing for "Vazirmatn UI FD NL", script 11
+22:44:07.433:   OpenType support missing for "Vazirmatn UI NL", script 11
+22:44:07.434:   OpenType support missing for "Iosevka Aile", script 11
+22:44:07.435:   OpenType support missing for "Iosevka Nerd Font", script 11
+22:44:07.436:   OpenType support missing for "Iosevka Nerd Font Mono", script 11
+22:44:07.437:   OpenType support missing for "Iosevka Nerd Font Propo", script 11
+22:44:07.437:   OpenType support missing for "Shabnam FD-WOL", script 11
+22:44:07.438:   OpenType support missing for "Shabnam FD", script 11
+22:44:07.438:   OpenType support missing for "Shabnam WOL", script 11
+22:44:07.438:   OpenType support missing for "Shabnam", script 11
+22:44:07.438:   OpenType support missing for "FontAwesome", script 11
+22:44:07.438:   OpenType support missing for "Samim FD-WOL", script 11
+22:44:07.439:   OpenType support missing for "Samim FD", script 11
+22:44:07.439:   OpenType support missing for "Samim WOL", script 11
+22:44:07.439:   OpenType support missing for "Samim", script 11
+22:44:07.439:   OpenType support missing for "Hack", script 11
+22:44:07.439:   OpenType support missing for "Inconsolata", script 11
+22:44:07.440:   OpenType support missing for "Inconsolata Nerd Font", script 11
+22:44:07.440:   OpenType support missing for "Inconsolata Nerd Font Mono", script 11
+22:44:07.440:   OpenType support missing for "Inconsolata Nerd Font Propo", script 11
+22:44:07.440:   OpenType support missing for "Ligconsolata", script 11
+22:44:07.441:   OpenType support missing for "MathJax_AMS", script 11
+22:44:07.441:   OpenType support missing for "MathJax_Caligraphic", script 11
+22:44:07.442:   OpenType support missing for "MathJax_Fraktur", script 11
+22:44:07.442:   OpenType support missing for "MathJax_Main", script 11
+22:44:07.443:   OpenType support missing for "MathJax_Math", script 11
+22:44:07.443:   OpenType support missing for "MathJax_SansSerif", script 11
+22:44:07.443:   OpenType support missing for "MathJax_Script", script 11
+22:44:07.444:   OpenType support missing for "MathJax_Size1", script 11
+22:44:07.444:   OpenType support missing for "MathJax_Size2", script 11
+22:44:07.444:   OpenType support missing for "MathJax_Size3", script 11
+22:44:07.445:   OpenType support missing for "MathJax_Size4", script 11
+22:44:07.445:   OpenType support missing for "MathJax_Typewriter", script 11
+22:44:07.446:   OpenType support missing for "DejaVu Math TeX Gyre", script 11
+22:44:07.446:   OpenType support missing for "DejaVuSansM Nerd Font", script 11
+22:44:07.446:   OpenType support missing for "DejaVuSansM Nerd Font Mono", script 11
+22:44:07.446:   OpenType support missing for "DejaVuSansM Nerd Font Propo", script 11
+22:44:07.446:   OpenType support missing for "DejaVu Sans Mono", script 11
+22:44:07.447:   OpenType support missing for "DejaVu Serif", script 11
+22:44:07.447:   OpenType support missing for "JetBrains Mono", script 11
+22:44:07.448:   OpenType support missing for "JetBrains Mono NL", script 11
+22:44:07.449:   OpenType support missing for "Liberation Mono", script 11
+22:44:07.449:   OpenType support missing for "Liberation Sans", script 11
+22:44:07.450:   OpenType support missing for "Liberation Serif", script 11
+22:44:07.450:   OpenType support missing for "Source Code Pro", script 11
+22:44:07.452:   OpenType support missing for "IranNastaliq", script 11
+22:44:07.452:   OpenType support missing for "Bitstream Vera Sans", script 11
+22:44:07.453:   OpenType support missing for "Bitstream Vera Sans Mono", script 11
+22:44:07.453:   OpenType support missing for "Bitstream Vera Serif", script 11
+22:44:07.454:   OpenType support missing for "D050000L", script 11
+22:44:07.454:   OpenType support missing for "Standard Symbols PS", script 11
+22:44:07.454:   OpenType support missing for "all-the-icons", script 11
+22:44:07.455:   OpenType support missing for "Parastoo FD-WOL", script 11
+22:44:07.455:   OpenType support missing for "Parastoo FD", script 11
+22:44:07.456:   OpenType support missing for "Parastoo Print FD-WOL", script 11
+22:44:07.456:   OpenType support missing for "Parastoo Print FD", script 11
+22:44:07.456:   OpenType support missing for "Parastoo Print WOL", script 11
+22:44:07.457:   OpenType support missing for "Parastoo Print", script 11
+22:44:07.457:   OpenType support missing for "Parastoo WOL", script 11
+22:44:07.457:   OpenType support missing for "Parastoo", script 11
+22:44:07.458:   OpenType support missing for "Latin Modern Math", script 11
+22:44:07.459:   OpenType support missing for "TeX Gyre Pagella Math", script 11
+22:44:07.460:   OpenType support missing for "TeX Gyre Termes Math", script 11
+22:44:07.460:   OpenType support missing for "Inconsolata LGC Nerd Font", script 11
+22:44:07.460:   OpenType support missing for "Inconsolata LGC Nerd Font Mono", script 11
+22:44:07.460:   OpenType support missing for "Inconsolata LGC Nerd Font Propo", script 11
+22:44:07.460:   OpenType support missing for "ComicShannsMono Nerd Font", script 11
+22:44:07.461:   OpenType support missing for "ComicShannsMono Nerd Font Mono", script 11
+22:44:07.461:   OpenType support missing for "ComicShannsMono Nerd Font Propo", script 11
+22:44:07.461:   OpenType support missing for "MesloLGS NF", script 11
+22:44:07.461:   OpenType support missing for "Vazir Code Extra Height FD", script 11
+22:44:07.462:   OpenType support missing for "Vazir Code Extra Height", script 11
+22:44:07.462:   OpenType support missing for "Vazir Code FD", script 11
+22:44:07.462:   OpenType support missing for "Vazir Code Hack Extra Height FD", script 11
+22:44:07.462:   OpenType support missing for "Vazir Code Hack Extra Height", script 11
+22:44:07.462:   OpenType support missing for "Vazir Code Hack FD", script 11
+22:44:07.463:   OpenType support missing for "Vazir Code Hack", script 11
+22:44:07.463:   OpenType support missing for "Vazir Code", script 11
+22:44:07.463:   OpenType support missing for "Weather Icons", script 11
+22:44:07.463:   OpenType support missing for "Vazir Code Extra Height FD-WOL", script 11
+22:44:07.463:   OpenType support missing for "Vazir Code Extra Height WOL", script 11
+22:44:07.464:   OpenType support missing for "Vazir Code FD-WOL", script 11
+22:44:07.464:   OpenType support missing for "Vazir Code Hack Extra Height FD-WOL", script 11
+22:44:07.464:   OpenType support missing for "Vazir Code Hack Extra Height WOL", script 11
+22:44:07.464:   OpenType support missing for "Vazir Code Hack FD-WOL", script 11
+22:44:07.465:   OpenType support missing for "Vazir Code Hack WOL", script 11
+22:44:07.465:   OpenType support missing for "Vazir Code WOL", script 11
+22:44:07.466:   OpenType support missing for "STIX MathJax Alphabets", script 11
+22:44:07.466:   OpenType support missing for "STIX MathJax Arrows", script 11
+22:44:07.466:   OpenType support missing for "STIX MathJax DoubleStruck", script 11
+22:44:07.467:   OpenType support missing for "STIX MathJax Fraktur", script 11
+22:44:07.467:   OpenType support missing for "STIX MathJax Latin", script 11
+22:44:07.468:   OpenType support missing for "STIX MathJax Main", script 11
+22:44:07.468:   OpenType support missing for "STIX MathJax Marks", script 11
+22:44:07.469:   OpenType support missing for "STIX MathJax Misc", script 11
+22:44:07.469:   OpenType support missing for "STIX MathJax Monospace", script 11
+22:44:07.469:   OpenType support missing for "STIX MathJax Operators", script 11
+22:44:07.470:   OpenType support missing for "STIX MathJax SansSerif", script 11
+22:44:07.470:   OpenType support missing for "STIX MathJax Script", script 11
+22:44:07.470:   OpenType support missing for "STIX MathJax Shapes", script 11
+22:44:07.471:   OpenType support missing for "STIX MathJax Size1", script 11
+22:44:07.471:   OpenType support missing for "STIX MathJax Size2", script 11
+22:44:07.471:   OpenType support missing for "STIX MathJax Size3", script 11
+22:44:07.472:   OpenType support missing for "STIX MathJax Size4", script 11
+22:44:07.472:   OpenType support missing for "STIX MathJax Size5", script 11
+22:44:07.472:   OpenType support missing for "STIX MathJax Symbols", script 11
+22:44:07.473:   OpenType support missing for "STIX MathJax Variants", script 11
+22:44:07.473:   OpenType support missing for "SourceCodeVF", script 11
+22:44:07.473:   OpenType support missing for "Material Icons", script 11
+22:44:07.473:   OpenType support missing for "Monofur Nerd Font", script 11
+22:44:07.474:   OpenType support missing for "Monofur Nerd Font Mono", script 11
+22:44:07.474:   OpenType support missing for "Monofur Nerd Font Propo", script 11
+22:44:07.474:   OpenType support missing for "C059", script 11
+22:44:07.474:   OpenType support missing for "Nimbus Mono PS", script 11
+22:44:07.474:   OpenType support missing for "Nimbus Roman", script 11
+22:44:07.474:   OpenType support missing for "P052", script 11
+22:44:07.475:   OpenType support missing for "Symbols Nerd Font Mono", script 11
+22:44:07.475:   OpenType support missing for "file-icons", script 11
+22:44:07.475:   OpenType support missing for "github-octicons", script 11
+22:44:07.475:   OpenType support missing for "Symbols Nerd Font", script 11
+22:44:07.475:   OpenType support missing for "Behdad", script 11
+22:44:07.496:   OpenType support missing for "Open Sans", script 12
+22:44:07.498:   OpenType support missing for "DejaVu Sans", script 12
+22:44:07.499:   OpenType support missing for "Luxi Sans", script 12
+22:44:07.499:   OpenType support missing for "Nimbus Sans", script 12
+22:44:07.499:   OpenType support missing for "URW Gothic", script 12
+22:44:07.499:   OpenType support missing for "Nimbus Sans Narrow", script 12
+22:44:07.499:   OpenType support missing for "Font Awesome 6 Brands", script 12
+22:44:07.500:   OpenType support missing for "Font Awesome 6 Free", script 12
+22:44:07.500:   OpenType support missing for "Font Awesome v4 Compatibility", script 12
+22:44:07.500:   OpenType support missing for "Vazirmatn FD", script 12
+22:44:07.500:   OpenType support missing for "Vazirmatn RD FD", script 12
+22:44:07.500:   OpenType support missing for "Vazirmatn RD", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn RD UI", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn UI FD", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn UI", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn FD NL", script 12
+22:44:07.501:   OpenType support missing for "Vazirmatn NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn RD FD NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn RD NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn RD UI FD NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn RD UI NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn UI FD NL", script 12
+22:44:07.502:   OpenType support missing for "Vazirmatn UI NL", script 12
+22:44:07.503:   OpenType support missing for "Iosevka Aile", script 12
+22:44:07.503:   OpenType support missing for "Iosevka Nerd Font", script 12
+22:44:07.503:   OpenType support missing for "Iosevka Nerd Font Mono", script 12
+22:44:07.503:   OpenType support missing for "Iosevka Nerd Font Propo", script 12
+22:44:07.504:   OpenType support missing for "Shabnam FD-WOL", script 12
+22:44:07.504:   OpenType support missing for "Shabnam FD", script 12
+22:44:07.504:   OpenType support missing for "Shabnam WOL", script 12
+22:44:07.504:   OpenType support missing for "Shabnam", script 12
+22:44:07.504:   OpenType support missing for "FontAwesome", script 12
+22:44:07.504:   OpenType support missing for "Samim FD-WOL", script 12
+22:44:07.505:   OpenType support missing for "Samim FD", script 12
+22:44:07.505:   OpenType support missing for "Samim WOL", script 12
+22:44:07.505:   OpenType support missing for "Samim", script 12
+22:44:07.505:   OpenType support missing for "Hack", script 12
+22:44:07.505:   OpenType support missing for "Inconsolata", script 12
+22:44:07.505:   OpenType support missing for "Inconsolata Nerd Font", script 12
+22:44:07.505:   OpenType support missing for "Inconsolata Nerd Font Mono", script 12
+22:44:07.506:   OpenType support missing for "Inconsolata Nerd Font Propo", script 12
+22:44:07.506:   OpenType support missing for "Ligconsolata", script 12
+22:44:07.506:   OpenType support missing for "MathJax_AMS", script 12
+22:44:07.507:   OpenType support missing for "MathJax_Caligraphic", script 12
+22:44:07.507:   OpenType support missing for "MathJax_Fraktur", script 12
+22:44:07.507:   OpenType support missing for "MathJax_Main", script 12
+22:44:07.508:   OpenType support missing for "MathJax_Math", script 12
+22:44:07.508:   OpenType support missing for "MathJax_SansSerif", script 12
+22:44:07.508:   OpenType support missing for "MathJax_Script", script 12
+22:44:07.509:   OpenType support missing for "MathJax_Size1", script 12
+22:44:07.509:   OpenType support missing for "MathJax_Size2", script 12
+22:44:07.509:   OpenType support missing for "MathJax_Size3", script 12
+22:44:07.509:   OpenType support missing for "MathJax_Size4", script 12
+22:44:07.510:   OpenType support missing for "MathJax_Typewriter", script 12
+22:44:07.510:   OpenType support missing for "DejaVu Math TeX Gyre", script 12
+22:44:07.510:   OpenType support missing for "DejaVuSansM Nerd Font", script 12
+22:44:07.510:   OpenType support missing for "DejaVuSansM Nerd Font Mono", script 12
+22:44:07.510:   OpenType support missing for "DejaVuSansM Nerd Font Propo", script 12
+22:44:07.511:   OpenType support missing for "DejaVu Sans Mono", script 12
+22:44:07.511:   OpenType support missing for "DejaVu Serif", script 12
+22:44:07.511:   OpenType support missing for "JetBrains Mono", script 12
+22:44:07.511:   OpenType support missing for "JetBrains Mono NL", script 12
+22:44:07.511:   OpenType support missing for "Liberation Mono", script 12
+22:44:07.511:   OpenType support missing for "Liberation Sans", script 12
+22:44:07.512:   OpenType support missing for "Liberation Serif", script 12
+22:44:07.512:   OpenType support missing for "Source Code Pro", script 12
+22:44:07.512:   OpenType support missing for "IranNastaliq", script 12
+22:44:07.512:   OpenType support missing for "Bitstream Vera Sans", script 12
+22:44:07.512:   OpenType support missing for "Bitstream Vera Sans Mono", script 12
+22:44:07.513:   OpenType support missing for "Bitstream Vera Serif", script 12
+22:44:07.513:   OpenType support missing for "D050000L", script 12
+22:44:07.513:   OpenType support missing for "Standard Symbols PS", script 12
+22:44:07.513:   OpenType support missing for "all-the-icons", script 12
+22:44:07.513:   OpenType support missing for "Parastoo FD-WOL", script 12
+22:44:07.514:   OpenType support missing for "Parastoo FD", script 12
+22:44:07.514:   OpenType support missing for "Parastoo Print FD-WOL", script 12
+22:44:07.515:   OpenType support missing for "Parastoo Print FD", script 12
+22:44:07.515:   OpenType support missing for "Parastoo Print WOL", script 12
+22:44:07.515:   OpenType support missing for "Parastoo Print", script 12
+22:44:07.515:   OpenType support missing for "Parastoo WOL", script 12
+22:44:07.516:   OpenType support missing for "Parastoo", script 12
+22:44:07.517:   OpenType support missing for "Latin Modern Math", script 12
+22:44:07.518:   OpenType support missing for "TeX Gyre Pagella Math", script 12
+22:44:07.518:   OpenType support missing for "TeX Gyre Termes Math", script 12
+22:44:07.518:   OpenType support missing for "Inconsolata LGC Nerd Font", script 12
+22:44:07.519:   OpenType support missing for "Inconsolata LGC Nerd Font Mono", script 12
+22:44:07.519:   OpenType support missing for "Inconsolata LGC Nerd Font Propo", script 12
+22:44:07.519:   OpenType support missing for "ComicShannsMono Nerd Font", script 12
+22:44:07.520:   OpenType support missing for "ComicShannsMono Nerd Font Mono", script 12
+22:44:07.520:   OpenType support missing for "ComicShannsMono Nerd Font Propo", script 12
+22:44:07.520:   OpenType support missing for "MesloLGS NF", script 12
+22:44:07.521:   OpenType support missing for "Vazir Code Extra Height FD", script 12
+22:44:07.521:   OpenType support missing for "Vazir Code Extra Height", script 12
+22:44:07.521:   OpenType support missing for "Vazir Code FD", script 12
+22:44:07.521:   OpenType support missing for "Vazir Code Hack Extra Height FD", script 12
+22:44:07.521:   OpenType support missing for "Vazir Code Hack Extra Height", script 12
+22:44:07.522:   OpenType support missing for "Vazir Code Hack FD", script 12
+22:44:07.522:   OpenType support missing for "Vazir Code Hack", script 12
+22:44:07.522:   OpenType support missing for "Vazir Code", script 12
+22:44:07.522:   OpenType support missing for "Weather Icons", script 12
+22:44:07.522:   OpenType support missing for "Vazir Code Extra Height FD-WOL", script 12
+22:44:07.522:   OpenType support missing for "Vazir Code Extra Height WOL", script 12
+22:44:07.523:   OpenType support missing for "Vazir Code FD-WOL", script 12
+22:44:07.523:   OpenType support missing for "Vazir Code Hack Extra Height FD-WOL", script 12
+22:44:07.523:   OpenType support missing for "Vazir Code Hack Extra Height WOL", script 12
+22:44:07.523:   OpenType support missing for "Vazir Code Hack FD-WOL", script 12
+22:44:07.523:   OpenType support missing for "Vazir Code Hack WOL", script 12
+22:44:07.524:   OpenType support missing for "Vazir Code WOL", script 12
+22:44:07.524:   OpenType support missing for "STIX MathJax Alphabets", script 12
+22:44:07.524:   OpenType support missing for "STIX MathJax Arrows", script 12
+22:44:07.525:   OpenType support missing for "STIX MathJax DoubleStruck", script 12
+22:44:07.525:   OpenType support missing for "STIX MathJax Fraktur", script 12
+22:44:07.526:   OpenType support missing for "STIX MathJax Latin", script 12
+22:44:07.526:   OpenType support missing for "STIX MathJax Main", script 12
+22:44:07.527:   OpenType support missing for "STIX MathJax Marks", script 12
+22:44:07.527:   OpenType support missing for "STIX MathJax Misc", script 12
+22:44:07.528:   OpenType support missing for "STIX MathJax Monospace", script 12
+22:44:07.528:   OpenType support missing for "STIX MathJax Operators", script 12
+22:44:07.529:   OpenType support missing for "STIX MathJax SansSerif", script 12
+22:44:07.529:   OpenType support missing for "STIX MathJax Script", script 12
+22:44:07.529:   OpenType support missing for "STIX MathJax Shapes", script 12
+22:44:07.530:   OpenType support missing for "STIX MathJax Size1", script 12
+22:44:07.530:   OpenType support missing for "STIX MathJax Size2", script 12
+22:44:07.530:   OpenType support missing for "STIX MathJax Size3", script 12
+22:44:07.531:   OpenType support missing for "STIX MathJax Size4", script 12
+22:44:07.531:   OpenType support missing for "STIX MathJax Size5", script 12
+22:44:07.532:   OpenType support missing for "STIX MathJax Symbols", script 12
+22:44:07.532:   OpenType support missing for "STIX MathJax Variants", script 12
+22:44:07.532:   OpenType support missing for "SourceCodeVF", script 12
+22:44:07.533:   OpenType support missing for "Material Icons", script 12
+22:44:07.533:   OpenType support missing for "Monofur Nerd Font", script 12
+22:44:07.533:   OpenType support missing for "Monofur Nerd Font Mono", script 12
+22:44:07.533:   OpenType support missing for "Monofur Nerd Font Propo", script 12
+22:44:07.533:   OpenType support missing for "C059", script 12
+22:44:07.533:   OpenType support missing for "Nimbus Mono PS", script 12
+22:44:07.534:   OpenType support missing for "Nimbus Roman", script 12
+22:44:07.534:   OpenType support missing for "P052", script 12
+22:44:07.534:   OpenType support missing for "Symbols Nerd Font Mono", script 12
+22:44:07.534:   OpenType support missing for "file-icons", script 12
+22:44:07.534:   OpenType support missing for "github-octicons", script 12
+22:44:07.535:   OpenType support missing for "Symbols Nerd Font", script 12
+22:44:07.535:   OpenType support missing for "Behdad", script 12
+22:44:07.552:   OpenType support missing for "Open Sans", script 16
+22:44:07.554:   OpenType support missing for "DejaVu Sans", script 16
+22:44:07.554:   OpenType support missing for "Luxi Sans", script 16
+22:44:07.554:   OpenType support missing for "Nimbus Sans", script 16
+22:44:07.555:   OpenType support missing for "URW Gothic", script 16
+22:44:07.555:   OpenType support missing for "Nimbus Sans Narrow", script 16
+22:44:07.555:   OpenType support missing for "Font Awesome 6 Brands", script 16
+22:44:07.555:   OpenType support missing for "Font Awesome 6 Free", script 16
+22:44:07.555:   OpenType support missing for "Font Awesome v4 Compatibility", script 16
+22:44:07.556:   OpenType support missing for "Vazirmatn FD", script 16
+22:44:07.556:   OpenType support missing for "Vazirmatn RD FD", script 16
+22:44:07.556:   OpenType support missing for "Vazirmatn RD", script 16
+22:44:07.556:   OpenType support missing for "Vazirmatn RD UI", script 16
+22:44:07.556:   OpenType support missing for "Vazirmatn", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn UI FD", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn UI", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn FD NL", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn NL", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn RD FD NL", script 16
+22:44:07.557:   OpenType support missing for "Vazirmatn RD NL", script 16
+22:44:07.558:   OpenType support missing for "Vazirmatn RD UI FD NL", script 16
+22:44:07.558:   OpenType support missing for "Vazirmatn RD UI NL", script 16
+22:44:07.558:   OpenType support missing for "Vazirmatn UI FD NL", script 16
+22:44:07.558:   OpenType support missing for "Vazirmatn UI NL", script 16
+22:44:07.559:   OpenType support missing for "Iosevka Aile", script 16
+22:44:07.559:   OpenType support missing for "Iosevka Nerd Font", script 16
+22:44:07.559:   OpenType support missing for "Iosevka Nerd Font Mono", script 16
+22:44:07.560:   OpenType support missing for "Iosevka Nerd Font Propo", script 16
+22:44:07.560:   OpenType support missing for "Shabnam FD-WOL", script 16
+22:44:07.560:   OpenType support missing for "Shabnam FD", script 16
+22:44:07.560:   OpenType support missing for "Shabnam WOL", script 16
+22:44:07.560:   OpenType support missing for "Shabnam", script 16
+22:44:07.561:   OpenType support missing for "FontAwesome", script 16
+22:44:07.561:   OpenType support missing for "Samim FD-WOL", script 16
+22:44:07.561:   OpenType support missing for "Samim FD", script 16
+22:44:07.561:   OpenType support missing for "Samim WOL", script 16
+22:44:07.561:   OpenType support missing for "Samim", script 16
+22:44:07.561:   OpenType support missing for "Hack", script 16
+22:44:07.562:   OpenType support missing for "Inconsolata", script 16
+22:44:07.562:   OpenType support missing for "Inconsolata Nerd Font", script 16
+22:44:07.562:   OpenType support missing for "Inconsolata Nerd Font Mono", script 16
+22:44:07.562:   OpenType support missing for "Inconsolata Nerd Font Propo", script 16
+22:44:07.562:   OpenType support missing for "Ligconsolata", script 16
+22:44:07.563:   OpenType support missing for "MathJax_AMS", script 16
+22:44:07.563:   OpenType support missing for "MathJax_Caligraphic", script 16
+22:44:07.564:   OpenType support missing for "MathJax_Fraktur", script 16
+22:44:07.564:   OpenType support missing for "MathJax_Main", script 16
+22:44:07.564:   OpenType support missing for "MathJax_Math", script 16
+22:44:07.565:   OpenType support missing for "MathJax_SansSerif", script 16
+22:44:07.565:   OpenType support missing for "MathJax_Script", script 16
+22:44:07.565:   OpenType support missing for "MathJax_Size1", script 16
+22:44:07.566:   OpenType support missing for "MathJax_Size2", script 16
+22:44:07.566:   OpenType support missing for "MathJax_Size3", script 16
+22:44:07.566:   OpenType support missing for "MathJax_Size4", script 16
+22:44:07.567:   OpenType support missing for "MathJax_Typewriter", script 16
+22:44:07.567:   OpenType support missing for "DejaVu Math TeX Gyre", script 16
+22:44:07.567:   OpenType support missing for "DejaVuSansM Nerd Font", script 16
+22:44:07.567:   OpenType support missing for "DejaVuSansM Nerd Font Mono", script 16
+22:44:07.567:   OpenType support missing for "DejaVuSansM Nerd Font Propo", script 16
+22:44:07.567:   OpenType support missing for "DejaVu Sans Mono", script 16
+22:44:07.567:   OpenType support missing for "DejaVu Serif", script 16
+22:44:07.568:   OpenType support missing for "JetBrains Mono", script 16
+22:44:07.568:   OpenType support missing for "JetBrains Mono NL", script 16
+22:44:07.568:   OpenType support missing for "Liberation Mono", script 16
+22:44:07.568:   OpenType support missing for "Liberation Sans", script 16
+22:44:07.568:   OpenType support missing for "Liberation Serif", script 16
+22:44:07.569:   OpenType support missing for "Source Code Pro", script 16
+22:44:07.569:   OpenType support missing for "IranNastaliq", script 16
+22:44:07.569:   OpenType support missing for "Bitstream Vera Sans", script 16
+22:44:07.569:   OpenType support missing for "Bitstream Vera Sans Mono", script 16
+22:44:07.569:   OpenType support missing for "Bitstream Vera Serif", script 16
+22:44:07.569:   OpenType support missing for "D050000L", script 16
+22:44:07.570:   OpenType support missing for "Standard Symbols PS", script 16
+22:44:07.570:   OpenType support missing for "all-the-icons", script 16
+22:44:07.570:   OpenType support missing for "Parastoo FD-WOL", script 16
+22:44:07.570:   OpenType support missing for "Parastoo FD", script 16
+22:44:07.570:   OpenType support missing for "Parastoo Print FD-WOL", script 16
+22:44:07.570:   OpenType support missing for "Parastoo Print FD", script 16
+22:44:07.571:   OpenType support missing for "Parastoo Print WOL", script 16
+22:44:07.571:   OpenType support missing for "Parastoo Print", script 16
+22:44:07.571:   OpenType support missing for "Parastoo WOL", script 16
+22:44:07.571:   OpenType support missing for "Parastoo", script 16
+22:44:07.572:   OpenType support missing for "Latin Modern Math", script 16
+22:44:07.572:   OpenType support missing for "TeX Gyre Pagella Math", script 16
+22:44:07.572:   OpenType support missing for "TeX Gyre Termes Math", script 16
+22:44:07.573:   OpenType support missing for "Inconsolata LGC Nerd Font", script 16
+22:44:07.573:   OpenType support missing for "Inconsolata LGC Nerd Font Mono", script 16
+22:44:07.573:   OpenType support missing for "Inconsolata LGC Nerd Font Propo", script 16
+22:44:07.573:   OpenType support missing for "ComicShannsMono Nerd Font", script 16
+22:44:07.573:   OpenType support missing for "ComicShannsMono Nerd Font Mono", script 16
+22:44:07.574:   OpenType support missing for "ComicShannsMono Nerd Font Propo", script 16
+22:44:07.574:   OpenType support missing for "MesloLGS NF", script 16
+22:44:07.574:   OpenType support missing for "Vazir Code Extra Height FD", script 16
+22:44:07.574:   OpenType support missing for "Vazir Code Extra Height", script 16
+22:44:07.574:   OpenType support missing for "Vazir Code FD", script 16
+22:44:07.575:   OpenType support missing for "Vazir Code Hack Extra Height FD", script 16
+22:44:07.575:   OpenType support missing for "Vazir Code Hack Extra Height", script 16
+22:44:07.575:   OpenType support missing for "Vazir Code Hack FD", script 16
+22:44:07.575:   OpenType support missing for "Vazir Code Hack", script 16
+22:44:07.575:   OpenType support missing for "Vazir Code", script 16
+22:44:07.575:   OpenType support missing for "Weather Icons", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code Extra Height FD-WOL", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code Extra Height WOL", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code FD-WOL", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code Hack Extra Height FD-WOL", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code Hack Extra Height WOL", script 16
+22:44:07.576:   OpenType support missing for "Vazir Code Hack FD-WOL", script 16
+22:44:07.577:   OpenType support missing for "Vazir Code Hack WOL", script 16
+22:44:07.577:   OpenType support missing for "Vazir Code WOL", script 16
+22:44:07.577:   OpenType support missing for "STIX MathJax Alphabets", script 16
+22:44:07.578:   OpenType support missing for "STIX MathJax Arrows", script 16
+22:44:07.578:   OpenType support missing for "STIX MathJax DoubleStruck", script 16
+22:44:07.578:   OpenType support missing for "STIX MathJax Fraktur", script 16
+22:44:07.579:   OpenType support missing for "STIX MathJax Latin", script 16
+22:44:07.579:   OpenType support missing for "STIX MathJax Main", script 16
+22:44:07.580:   OpenType support missing for "STIX MathJax Marks", script 16
+22:44:07.580:   OpenType support missing for "STIX MathJax Misc", script 16
+22:44:07.580:   OpenType support missing for "STIX MathJax Monospace", script 16
+22:44:07.581:   OpenType support missing for "STIX MathJax Operators", script 16
+22:44:07.581:   OpenType support missing for "STIX MathJax SansSerif", script 16
+22:44:07.582:   OpenType support missing for "STIX MathJax Script", script 16
+22:44:07.582:   OpenType support missing for "STIX MathJax Shapes", script 16
+22:44:07.583:   OpenType support missing for "STIX MathJax Size1", script 16
+22:44:07.583:   OpenType support missing for "STIX MathJax Size2", script 16
+22:44:07.584:   OpenType support missing for "STIX MathJax Size3", script 16
+22:44:07.584:   OpenType support missing for "STIX MathJax Size4", script 16
+22:44:07.584:   OpenType support missing for "STIX MathJax Size5", script 16
+22:44:07.585:   OpenType support missing for "STIX MathJax Symbols", script 16
+22:44:07.585:   OpenType support missing for "STIX MathJax Variants", script 16
+22:44:07.585:   OpenType support missing for "SourceCodeVF", script 16
+22:44:07.585:   OpenType support missing for "Material Icons", script 16
+22:44:07.586:   OpenType support missing for "Monofur Nerd Font", script 16
+22:44:07.586:   OpenType support missing for "Monofur Nerd Font Mono", script 16
+22:44:07.586:   OpenType support missing for "Monofur Nerd Font Propo", script 16
+22:44:07.586:   OpenType support missing for "C059", script 16
+22:44:07.586:   OpenType support missing for "Nimbus Mono PS", script 16
+22:44:07.586:   OpenType support missing for "Nimbus Roman", script 16
+22:44:07.587:   OpenType support missing for "P052", script 16
+22:44:07.587:   OpenType support missing for "Symbols Nerd Font Mono", script 16
+22:44:07.587:   OpenType support missing for "file-icons", script 16
+22:44:07.587:   OpenType support missing for "github-octicons", script 16
+22:44:07.587:   OpenType support missing for "Symbols Nerd Font", script 16
+22:44:07.588:   OpenType support missing for "Behdad", script 16
+22:44:07.603:   OpenType support missing for "Open Sans", script 20
+22:44:07.604:   OpenType support missing for "DejaVu Sans", script 20
+22:44:07.605:   OpenType support missing for "Luxi Sans", script 20
+22:44:07.605:   OpenType support missing for "Nimbus Sans", script 20
+22:44:07.605:   OpenType support missing for "URW Gothic", script 20
+22:44:07.606:   OpenType support missing for "Nimbus Sans Narrow", script 20
+22:44:07.606:   OpenType support missing for "Font Awesome 6 Brands", script 20
+22:44:07.606:   OpenType support missing for "Font Awesome 6 Free", script 20
+22:44:07.606:   OpenType support missing for "Font Awesome v4 Compatibility", script 20
+22:44:07.606:   OpenType support missing for "Vazirmatn FD", script 20
+22:44:07.606:   OpenType support missing for "Vazirmatn RD FD", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn RD", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn RD UI", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn UI FD", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn UI", script 20
+22:44:07.607:   OpenType support missing for "Vazirmatn FD NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn RD FD NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn RD NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn RD UI FD NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn RD UI NL", script 20
+22:44:07.608:   OpenType support missing for "Vazirmatn UI FD NL", script 20
+22:44:07.609:   OpenType support missing for "Vazirmatn UI NL", script 20
+22:44:07.609:   OpenType support missing for "Iosevka Aile", script 20
+22:44:07.609:   OpenType support missing for "Iosevka Nerd Font", script 20
+22:44:07.609:   OpenType support missing for "Iosevka Nerd Font Mono", script 20
+22:44:07.610:   OpenType support missing for "Iosevka Nerd Font Propo", script 20
+22:44:07.610:   OpenType support missing for "Shabnam FD-WOL", script 20
+22:44:07.610:   OpenType support missing for "Shabnam FD", script 20
+22:44:07.610:   OpenType support missing for "Shabnam WOL", script 20
+22:44:07.610:   OpenType support missing for "Shabnam", script 20
+22:44:07.610:   OpenType support missing for "FontAwesome", script 20
+22:44:07.611:   OpenType support missing for "Samim FD-WOL", script 20
+22:44:07.611:   OpenType support missing for "Samim FD", script 20
+22:44:07.611:   OpenType support missing for "Samim WOL", script 20
+22:44:07.611:   OpenType support missing for "Samim", script 20
+22:44:07.611:   OpenType support missing for "Hack", script 20
+22:44:07.611:   OpenType support missing for "Inconsolata", script 20
+22:44:07.611:   OpenType support missing for "Inconsolata Nerd Font", script 20
+22:44:07.612:   OpenType support missing for "Inconsolata Nerd Font Mono", script 20
+22:44:07.612:   OpenType support missing for "Inconsolata Nerd Font Propo", script 20
+22:44:07.612:   OpenType support missing for "Ligconsolata", script 20
+22:44:07.612:   OpenType support missing for "MathJax_AMS", script 20
+22:44:07.613:   OpenType support missing for "MathJax_Caligraphic", script 20
+22:44:07.613:   OpenType support missing for "MathJax_Fraktur", script 20
+22:44:07.614:   OpenType support missing for "MathJax_Main", script 20
+22:44:07.614:   OpenType support missing for "MathJax_Math", script 20
+22:44:07.614:   OpenType support missing for "MathJax_SansSerif", script 20
+22:44:07.615:   OpenType support missing for "MathJax_Script", script 20
+22:44:07.615:   OpenType support missing for "MathJax_Size1", script 20
+22:44:07.615:   OpenType support missing for "MathJax_Size2", script 20
+22:44:07.616:   OpenType support missing for "MathJax_Size3", script 20
+22:44:07.616:   OpenType support missing for "MathJax_Size4", script 20
+22:44:07.616:   OpenType support missing for "MathJax_Typewriter", script 20
+22:44:07.617:   OpenType support missing for "DejaVu Math TeX Gyre", script 20
+22:44:07.617:   OpenType support missing for "DejaVuSansM Nerd Font", script 20
+22:44:07.617:   OpenType support missing for "DejaVuSansM Nerd Font Mono", script 20
+22:44:07.617:   OpenType support missing for "DejaVuSansM Nerd Font Propo", script 20
+22:44:07.617:   OpenType support missing for "DejaVu Sans Mono", script 20
+22:44:07.617:   OpenType support missing for "DejaVu Serif", script 20
+22:44:07.618:   OpenType support missing for "JetBrains Mono", script 20
+22:44:07.618:   OpenType support missing for "JetBrains Mono NL", script 20
+22:44:07.618:   OpenType support missing for "Liberation Mono", script 20
+22:44:07.618:   OpenType support missing for "Liberation Sans", script 20
+22:44:07.618:   OpenType support missing for "Liberation Serif", script 20
+22:44:07.619:   OpenType support missing for "Source Code Pro", script 20
+22:44:07.619:   OpenType support missing for "IranNastaliq", script 20
+22:44:07.619:   OpenType support missing for "Bitstream Vera Sans", script 20
+22:44:07.619:   OpenType support missing for "Bitstream Vera Sans Mono", script 20
+22:44:07.619:   OpenType support missing for "Bitstream Vera Serif", script 20
+22:44:07.619:   OpenType support missing for "D050000L", script 20
+22:44:07.620:   OpenType support missing for "Standard Symbols PS", script 20
+22:44:07.620:   OpenType support missing for "all-the-icons", script 20
+22:44:07.620:   OpenType support missing for "Parastoo FD-WOL", script 20
+22:44:07.620:   OpenType support missing for "Parastoo FD", script 20
+22:44:07.620:   OpenType support missing for "Parastoo Print FD-WOL", script 20
+22:44:07.620:   OpenType support missing for "Parastoo Print FD", script 20
+22:44:07.621:   OpenType support missing for "Parastoo Print WOL", script 20
+22:44:07.621:   OpenType support missing for "Parastoo Print", script 20
+22:44:07.621:   OpenType support missing for "Parastoo WOL", script 20
+22:44:07.621:   OpenType support missing for "Parastoo", script 20
+22:44:07.622:   OpenType support missing for "Latin Modern Math", script 20
+22:44:07.622:   OpenType support missing for "TeX Gyre Pagella Math", script 20
+22:44:07.623:   OpenType support missing for "TeX Gyre Termes Math", script 20
+22:44:07.623:   OpenType support missing for "Inconsolata LGC Nerd Font", script 20
+22:44:07.623:   OpenType support missing for "Inconsolata LGC Nerd Font Mono", script 20
+22:44:07.623:   OpenType support missing for "Inconsolata LGC Nerd Font Propo", script 20
+22:44:07.624:   OpenType support missing for "ComicShannsMono Nerd Font", script 20
+22:44:07.624:   OpenType support missing for "ComicShannsMono Nerd Font Mono", script 20
+22:44:07.624:   OpenType support missing for "ComicShannsMono Nerd Font Propo", script 20
+22:44:07.624:   OpenType support missing for "MesloLGS NF", script 20
+22:44:07.625:   OpenType support missing for "Vazir Code Extra Height FD", script 20
+22:44:07.625:   OpenType support missing for "Vazir Code Extra Height", script 20
+22:44:07.625:   OpenType support missing for "Vazir Code FD", script 20
+22:44:07.625:   OpenType support missing for "Vazir Code Hack Extra Height FD", script 20
+22:44:07.625:   OpenType support missing for "Vazir Code Hack Extra Height", script 20
+22:44:07.626:   OpenType support missing for "Vazir Code Hack FD", script 20
+22:44:07.626:   OpenType support missing for "Vazir Code Hack", script 20
+22:44:07.626:   OpenType support missing for "Vazir Code", script 20
+22:44:07.626:   OpenType support missing for "Weather Icons", script 20
+22:44:07.626:   OpenType support missing for "Vazir Code Extra Height FD-WOL", script 20
+22:44:07.626:   OpenType support missing for "Vazir Code Extra Height WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code FD-WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code Hack Extra Height FD-WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code Hack Extra Height WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code Hack FD-WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code Hack WOL", script 20
+22:44:07.627:   OpenType support missing for "Vazir Code WOL", script 20
+22:44:07.628:   OpenType support missing for "STIX MathJax Alphabets", script 20
+22:44:07.628:   OpenType support missing for "STIX MathJax Arrows", script 20
+22:44:07.629:   OpenType support missing for "STIX MathJax DoubleStruck", script 20
+22:44:07.629:   OpenType support missing for "STIX MathJax Fraktur", script 20
+22:44:07.629:   OpenType support missing for "STIX MathJax Latin", script 20
+22:44:07.630:   OpenType support missing for "STIX MathJax Main", script 20
+22:44:07.630:   OpenType support missing for "STIX MathJax Marks", script 20
+22:44:07.631:   OpenType support missing for "STIX MathJax Misc", script 20
+22:44:07.631:   OpenType support missing for "STIX MathJax Monospace", script 20
+22:44:07.631:   OpenType support missing for "STIX MathJax Operators", script 20
+22:44:07.632:   OpenType support missing for "STIX MathJax SansSerif", script 20
+22:44:07.632:   OpenType support missing for "STIX MathJax Script", script 20
+22:44:07.632:   OpenType support missing for "STIX MathJax Shapes", script 20
+22:44:07.633:   OpenType support missing for "STIX MathJax Size1", script 20
+22:44:07.633:   OpenType support missing for "STIX MathJax Size2", script 20
+22:44:07.633:   OpenType support missing for "STIX MathJax Size3", script 20
+22:44:07.634:   OpenType support missing for "STIX MathJax Size4", script 20
+22:44:07.634:   OpenType support missing for "STIX MathJax Size5", script 20
+22:44:07.634:   OpenType support missing for "STIX MathJax Symbols", script 20
+22:44:07.635:   OpenType support missing for "STIX MathJax Variants", script 20
+22:44:07.635:   OpenType support missing for "SourceCodeVF", script 20
+22:44:07.635:   OpenType support missing for "Material Icons", script 20
+22:44:07.635:   OpenType support missing for "Monofur Nerd Font", script 20
+22:44:07.635:   OpenType support missing for "Monofur Nerd Font Mono", script 20
+22:44:07.636:   OpenType support missing for "Monofur Nerd Font Propo", script 20
+22:44:07.636:   OpenType support missing for "C059", script 20
+22:44:07.636:   OpenType support missing for "Nimbus Mono PS", script 20
+22:44:07.636:   OpenType support missing for "Nimbus Roman", script 20
+22:44:07.636:   OpenType support missing for "P052", script 20
+22:44:07.637:   OpenType support missing for "Symbols Nerd Font Mono", script 20
+22:44:07.637:   OpenType support missing for "file-icons", script 20
+22:44:07.637:   OpenType support missing for "github-octicons", script 20
+22:44:07.637:   OpenType support missing for "Symbols Nerd Font", script 20
+22:44:07.637:   OpenType support missing for "Behdad", script 20
+22:44:12.868: ==== Shutting down ==================================================
+22:44:12.875: pulse-input: Stopped recording from 'bluez_output.F4_2B_8C_81_47_E1.1.monitor'
+22:44:12.875: pulse-input: Got 6542 packets with 7850400 frames
+22:44:12.875: pulse-input: Stopped recording from 'bluez_input.F4:2B:8C:81:47:E1'
+22:44:12.875: pulse-input: Got 6534 packets with 7840800 frames
+22:44:12.925: All scene data cleared
+22:44:12.925: ------------------------------------------------
+22:44:12.996: [Scripting] Total detached callbacks: 0
+22:44:12.996: Freeing OBS context data
+22:44:13.008: == Profiler Results =============================
+22:44:13.008: run_program_init: 3314.79 ms
+22:44:13.008:  ┣OBSApp::AppInit: 9.143 ms
+22:44:13.008:  ┃ ┗OBSApp::InitLocale: 4.39 ms
+22:44:13.008:  ┗OBSApp::OBSInit: 667.132 ms
+22:44:13.008:    ┣obs_startup: 44.964 ms
+22:44:13.008:    ┗OBSBasic::OBSInit: 583.473 ms
+22:44:13.008:      ┣OBSBasic::InitBasicConfig: 0.068 ms
+22:44:13.008:      ┣OBSBasic::ResetAudio: 0.146 ms
+22:44:13.008:      ┣OBSBasic::ResetVideo: 102.931 ms
+22:44:13.008:      ┃ ┗obs_init_graphics: 95.86 ms
+22:44:13.008:      ┃   ┗shader compilation: 27.891 ms
+22:44:13.008:      ┣OBSBasic::InitOBSCallbacks: 0.005 ms
+22:44:13.008:      ┣OBSBasic::InitHotkeys: 0.02 ms
+22:44:13.008:      ┣obs_load_all_modules2: 312.419 ms
+22:44:13.008:      ┃ ┣obs_init_module(decklink-captions.so): 0 ms
+22:44:13.008:      ┃ ┣obs_init_module(decklink-output-ui.so): 0.002 ms
+22:44:13.008:      ┃ ┣obs_init_module(decklink.so): 0.058 ms
+22:44:13.008:      ┃ ┣obs_init_module(frontend-tools.so): 50.611 ms
+22:44:13.008:      ┃ ┣obs_init_module(image-source.so): 0.01 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-alsa.so): 0.001 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-capture.so): 0.573 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-jack.so): 0.002 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-pipewire.so): 15.243 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-pulseaudio.so): 0.003 ms
+22:44:13.008:      ┃ ┣obs_init_module(linux-v4l2.so): 5.739 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-ffmpeg.so): 10.434 ms
+22:44:13.008:      ┃ ┃ ┗nvenc_check: 5.357 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-filters.so): 0.018 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-libfdk.so): 0.001 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-outputs.so): 0.004 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-qsv11.so): 4.601 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-transitions.so): 0.006 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-vst.so): 0.003 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-webrtc.so): 0.003 ms
+22:44:13.008:      ┃ ┣obs_init_module(obs-x264.so): 0.002 ms
+22:44:13.008:      ┃ ┣obs_init_module(rtmp-services.so): 0.584 ms
+22:44:13.008:      ┃ ┗obs_init_module(text-freetype2.so): 0.017 ms
+22:44:13.008:      ┣OBSBasic::InitService: 1.23 ms
+22:44:13.008:      ┣OBSBasic::ResetOutputs: 0.219 ms
+22:44:13.008:      ┣OBSBasic::CreateHotkeys: 0.022 ms
+22:44:13.008:      ┣OBSBasic::InitPrimitives: 0.087 ms
+22:44:13.008:      ┗OBSBasic::Load: 51.881 ms
+22:44:13.008: obs_hotkey_thread(25 ms): min=0.033 ms, median=0.915 ms, max=38.73 ms, 99th percentile=13.318 ms, 99.8668% below 25 ms
+22:44:13.008: audio_thread(Audio): min=0.01 ms, median=0.133 ms, max=7.177 ms, 99th percentile=1.068 ms
+22:44:13.008:  ┗receive_audio: min=0.002 ms, median=0.651 ms, max=7.031 ms, 99th percentile=1.308 ms, 0.0562776 calls per parent call
+22:44:13.008:    ┣buffer_audio: min=0 ms, median=0.001 ms, max=0.035 ms, 99th percentile=0.004 ms
+22:44:13.008:    ┗do_encode: min=0.073 ms, median=0.647 ms, max=7.022 ms, 99th percentile=1.301 ms
+22:44:13.008:      ┣encode(simple_aac): min=0.071 ms, median=0.626 ms, max=1.362 ms, 99th percentile=1.186 ms
+22:44:13.008:      ┗send_packet: min=0.002 ms, median=0.012 ms, max=6.369 ms, 99th percentile=0.32 ms
+22:44:13.008: obs_graphics_thread(33.3333 ms): min=0.054 ms, median=10.434 ms, max=50.72 ms, 99th percentile=27.152 ms, 99.8171% below 33.333 ms
+22:44:13.008:  ┣tick_sources: min=0.001 ms, median=9.018 ms, max=48.373 ms, 99th percentile=25.583 ms
+22:44:13.008:  ┣output_frame: min=0.023 ms, median=0.231 ms, max=5.671 ms, 99th percentile=0.801 ms
+22:44:13.008:  ┃ ┣gs_context(video->graphics): min=0.023 ms, median=0.229 ms, max=5.67 ms, 99th percentile=0.491 ms
+22:44:13.008:  ┃ ┃ ┣render_video: min=0.017 ms, median=0.135 ms, max=5.464 ms, 99th percentile=0.275 ms
+22:44:13.008:  ┃ ┃ ┃ ┣render_main_texture: min=0.013 ms, median=0.128 ms, max=2.256 ms, 99th percentile=0.217 ms
+22:44:13.008:  ┃ ┃ ┃ ┣render_output_texture: min=0.011 ms, median=0.025 ms, max=1.77 ms, 99th percentile=0.051 ms, 0.0554765 calls per parent call
+22:44:13.008:  ┃ ┃ ┃ ┣render_convert_texture: min=0.016 ms, median=0.035 ms, max=3.149 ms, 99th percentile=0.063 ms, 0.0554765 calls per parent call
+22:44:13.008:  ┃ ┃ ┃ ┗stage_output_texture: min=0.01 ms, median=0.022 ms, max=0.46 ms, 99th percentile=0.037 ms, 0.0554765 calls per parent call
+22:44:13.008:  ┃ ┃ ┣gs_flush: min=0.004 ms, median=0.077 ms, max=1.131 ms, 99th percentile=0.148 ms
+22:44:13.008:  ┃ ┃ ┗download_frame: min=0 ms, median=0.091 ms, max=0.397 ms, 99th percentile=0.203 ms, 0.0554765 calls per parent call
+22:44:13.008:  ┃ ┗output_video_data: min=0.248 ms, median=0.329 ms, max=1.315 ms, 99th percentile=1.231 ms, 0.0552733 calls per parent call
+22:44:13.008:  ┗render_displays: min=0.001 ms, median=1.111 ms, max=9.196 ms, 99th percentile=1.926 ms
+22:44:13.008: video_thread(video): min=0.617 ms, median=1.122 ms, max=2.152 ms, 99th percentile=2.063 ms
+22:44:13.008:  ┗receive_video: min=0.615 ms, median=1.12 ms, max=2.149 ms, 99th percentile=2.06 ms
+22:44:13.008:    ┗do_encode: min=0.614 ms, median=1.118 ms, max=2.147 ms, 99th percentile=2.059 ms
+22:44:13.008:      ┣encode(simple_video_stream): min=0.6 ms, median=1.093 ms, max=2.098 ms, 99th percentile=2.046 ms
+22:44:13.008:      ┗send_packet: min=0.005 ms, median=0.009 ms, max=0.375 ms, 99th percentile=0.092 ms
+22:44:13.008: =================================================
+22:44:13.008: == Profiler Time Between Calls ==================
+22:44:13.008: obs_hotkey_thread(25 ms): min=25.101 ms, median=26.08 ms, max=63.878 ms, 17.455% within ±2% of 25 ms (0% lower, 82.545% higher)
+22:44:13.008: obs_graphics_thread(33.3333 ms): min=16.034 ms, median=33.334 ms, max=50.73 ms, 99.6748% within ±2% of 33.333 ms (0.162602% lower, 0.162602% higher)
+22:44:13.008: =================================================
+22:44:13.020: Number of memory leaks: 0

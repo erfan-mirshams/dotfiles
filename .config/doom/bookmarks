@@ -9,11 +9,11 @@
  (position . 74)
  (last-modified 25927 48296 258574 241000))
 ("org-capture-last-stored"
- (filename . "~/org/roam/20231028215451-arxiv.org")
- (front-context-string)
- (rear-context-string . "0-28 Sat 21:54]\n")
- (position . 114)
- (last-modified 25917 20982 291820 516000))
+ (filename . "~/org/roam/20240608153223-divar_email_service.org")
+ (front-context-string . "** Current tasks")
+ (rear-context-string . "Project\n* Tasks\n")
+ (position . 157)
+ (last-modified 26212 18712 729314 457000))
 ("oly"
  (filename . "~/projects/oly/")
  (front-context-string . "amali_dahom\n  dr")
