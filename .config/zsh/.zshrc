@@ -92,7 +92,7 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
 # Initializing keychain
-eval $(keychain --eval --quiet --confhost github codeberg divar-git sotoon)
+eval $(keychain --eval --quiet --confhost sotoon github codeberg divar-git divar-company-laptop-git)
 
 # Initializing prompt
 autoload -Uz promptinit
@@ -101,13 +101,13 @@ promptinit
 # Set prompt
 eval "$(starship init zsh)"
 
+# Kubernetes plugin
+if command -v kubectl 1>/dev/null 2>&1; then
+    source ~/.config/zsh/plugins/kubectl.plugin.zsh
+fi
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
-# Initializing pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
 
 _pyenv_virtualenv_hook() {
   eval "$(pyenv init -)"
@@ -118,5 +118,9 @@ _pyenv_virtualenv_hook() {
 typeset -a +U precmd_functions
 precmd_functions+=(_pyenv_virtualenv_hook)
 
+# Initializing pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
