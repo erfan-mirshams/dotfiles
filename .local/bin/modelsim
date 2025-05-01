@@ -1,2 +1,2 @@
 #!/bin/sh
-st -e devour ~/applications/intel-fpga/modelsim_ase/bin/vsim
+st -e devour ~/applications/intel-fpga/modelsim-20.1/modelsim_ase/bin/vsim

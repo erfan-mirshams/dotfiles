@@ -4,6 +4,8 @@
 PIC=$(find "/usr/share/backgrounds" -type f | shuf -n 1)
 wal -qni $PIC -s
 feh --bg-fill $PIC
+DPI=144
+echo "Xft.dpi: $DPI" >> $XDG_CACHE_HOME/wal/colors.Xresources
 cp $XDG_CACHE_HOME/wal/colors.Xresources $XDG_CONFIG_HOME/xresources
 xrdb -merge $XDG_CONFIG_HOME/xresources
 xsetroot -name "fsignal:1"

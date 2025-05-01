@@ -1,0 +1,3 @@
+#!/bin/bash
+
+g++ code.cpp -Werror -Wall -Wextra -ggdb -O0

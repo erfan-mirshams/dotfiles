@@ -1,0 +1,3 @@
+#!/bin/sh
+brillo -U 5
+pkill -RTMIN+3 "${STATUSBAR:-dwmblocks}";

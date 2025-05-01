@@ -1,0 +1,2 @@
+#!/bin/sh
+devour mpv --profile=low-latency --untimed --no-cache --no-demuxer-thread --demuxer-lavf-o=rtbufsize=256M --demuxer-lavf-o=fflags=nobuffer --demuxer-lavf-o=stimeout=1000000 av://v4l2:/dev/video0 --geometry=320x240+1600+40 --ontop --no-border --force-window=yes --keep-open=always --hwdec=auto

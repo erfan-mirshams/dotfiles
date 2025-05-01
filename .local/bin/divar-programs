@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Function to switch to a tag, launch an application, and switch back
+spawn_in_tag() {
+  local tag=$1
+  local class=$2
+  shift 2
+  local cmd="$@"
+
+  # Switch to the desired tag
+  xdotool key super+$((tag))
+
+  # Spawn the application
+  $cmd &
+  cmd_pid=$!
+
+  # Wait for a window matching the class to be created
+  xdotool search --sync --onlyvisible --class $class
+
+  # Optionally wait a bit more to ensure the window is fully initialized
+  sleep 0.9
+}
+
+spawn_in_tag 1 "zen" zen-divar
+spawn_in_tag 2 "Emacs" emacsclient -c
+spawn_in_tag 3 "cursor" cursor
+spawn_in_tag 5 "st" k9s-launch
+spawn_in_tag 8 "cliq" cliq

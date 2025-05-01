@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Exit on error
+set -e
+
+# Get current branch name
+BRANCH=$(git branch --show-current)
+COMMIT_MSG="Squashed repo for sourcegraph test"
+
+# Create temporary orphan branch
+git checkout --orphan temp-squash
+
+# Add all files and commit
+git add .
+git commit -m "$COMMIT_MSG"
+
+# Replace original branch with the new single-commit branch
+git branch -D "$BRANCH"
+git branch -m "$BRANCH"
+
+echo "Successfully squashed all commits on branch: $BRANCH"

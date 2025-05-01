@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Path to the text file with URLs
+URLS_FILE=~/.zen/urls.txt
+
+# Read URLs from the file into an array
+mapfile -t urls < "$URLS_FILE"
+
+# Launch Firefox with all URLs
+zen-browser "${urls[@]}"
