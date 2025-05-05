@@ -1,0 +1,57 @@
+(require 'package)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; Initialize the package system if it's not yet initialized
+(unless (bound-and-true-p package--initialized) 
+  (package-initialize))
+
+;; Refresh package contents
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defvar rc/package-contents-refreshed nil)
+
+(defun rc/package-refresh-contents-once ()
+  (when (not rc/package-contents-refreshed)
+    (setq rc/package-contents-refreshed t)
+    (package-refresh-contents)))
+
+(defun rc/require-one-package (package)
+  (when (not (package-installed-p package))
+    (rc/package-refresh-contents-once)
+    (package-install package)))
+
+(defun rc/require (&rest packages)
+  (dolist (package packages)
+    (rc/require-one-package package)))
+
+(defun rc/require-theme (theme)
+  (let ((theme-package (->> theme
+                            (symbol-name)
+                            (funcall (-flip #'concat) "-theme")
+                            (intern))))
+    (rc/require theme-package)
+    (load-theme theme t)))
+
+
+(defun rc/treesit-language-install (lang-name &optional lang-source)
+  "Ensure TreeSitter grammar for LANG-NAME is installed.
+If LANG-SOURCE is provided, use it as the source URL, otherwise use the default."
+  (unless (treesit-language-available-p lang-name)
+    (let* ((source (or lang-source
+                        (alist-get lang-name
+                                   (mapcar (lambda (item)
+                                             (cons (car item)
+                                                   (alist-get 'url (cdr item))))
+                                           treesit-language-source-alist)
+                                   nil nil #'equal)))
+           (message-log-max nil)) ; Suppress message log output
+      (message "Installing TreeSitter grammar for %s..." lang-name)
+      (condition-case err
+          (progn
+            (treesit-install-language-grammar lang-name source)
+            (message "TreeSitter grammar for %s installed successfully!" lang-name))
+        (error
+         (message "Failed to install TreeSitter grammar for %s: %s" 
+                  lang-name (error-message-string err)))))))

@@ -1,0 +1,224 @@
+;; Org mode configuration
+(require 'org)
+(require 'org-faces)
+(rc/require 'visual-fill-column)
+
+;; Configure fill width
+(setq visual-fill-column-width 50
+      visual-fill-column-center-text t)
+
+;; Org Present Mode configuration
+(rc/require 'org-present)
+
+(defun my/org-present-prepare-slide (buffer-name heading)
+  ;; Show only top-level headlines
+  (org-overview)
+  ;; Unfold the current entry
+  (org-show-entry)
+  ;; Show only direct subheadings of the slide but don't expand them
+  (org-show-children))
+
+(defun my/org-present-start ()
+  ;; Tweak font sizes - instead of doom-big-font-mode
+  (text-scale-increase 2)
+  ;; Remove Line Numbers
+  (display-line-numbers-mode 0)
+  ;; Set a blank header line string to create blank space at the top
+  (setq header-line-format " ")
+  ;; Display inline images automatically
+  (org-display-inline-images)
+  ;; Center the presentation and wrap lines
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1))
+
+(defun my/org-present-end ()
+  ;; Reset font customizations
+  (text-scale-set 0)
+  ;; Add Line Numbers
+  (display-line-numbers-mode 1)
+  ;; Clear the header line string so that it isn't displayed
+  (setq header-line-format nil)
+  ;; Stop displaying inline images
+  (org-remove-inline-images)
+  ;; Stop centering the document
+  (visual-fill-column-mode 0)
+  (visual-line-mode 0))
+
+;; Register hooks with org-present
+(add-hook 'org-present-mode-hook 'my/org-present-start)
+(add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+(add-hook 'org-present-after-navigate-functions 'my/org-present-prepare-slide)
+
+;; Basic org configuration
+(setq org-directory "~/org/")
+(setq org-agenda-files
+      '("~/org/habits.org"
+        "~/org/birthdays.org"
+        "~/org/todo.org"))
+
+;; Enable org-habit
+(require 'org-habit)
+(add-to-list 'org-modules 'org-habit)
+
+;; Logging settings
+(setq org-log-done 'time)
+(setq org-log-into-drawer t)
+
+;; Refile targets
+(setq org-refile-targets
+      '(("archive.org" :maxlevel . 1)
+        ("todo.org" :maxlevel . 1)))
+
+;; Save org buffers after refile and after agenda quit
+(advice-add 'org-refile :after 'org-save-all-org-buffers)
+(advice-add 'org-agenda-quit :after 'org-save-all-org-buffers)
+
+;; Enable bidirectional text support globally
+(setq-default bidi-display-reordering t)
+(setq-default bidi-paragraph-direction nil)
+
+;; Org Auto Tangle
+(rc/require 'org-auto-tangle)
+(setq org-auto-tangle-default t)
+
+;; Org Roam setup
+(rc/require 'org-roam)
+(setq org-roam-directory "~/org/roam")
+(setq org-roam-capture-templates
+   '(("d" "default" plain
+      "%?"
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+TITLE: ${title}\n#+DATE: %U\n")
+      :unnarrowed t)
+     ("p" "project" plain
+      (file "~/org/roam/templates/project-capture.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
+      :unnarrowed t)))
+(org-roam-db-autosync-mode)
+
+;; Org Roam functions
+(defun org-roam-node-insert-immediate (arg &rest args)
+  (interactive "P")
+  (let ((args (push arg args))
+        (org-roam-capture-templates (list (append (car org-roam-capture-templates)
+                                                  '(:immediate-finish t)))))
+    (apply #'org-roam-node-insert args)))
+
+(defun my/org-roam-filter-by-tag (tag-name)
+  (lambda (node)
+    (member tag-name (org-roam-node-tags node))))
+
+(defun my/org-roam-list-notes-by-tag (tag-name)
+  (mapcar #'org-roam-node-file
+          (seq-filter
+           (my/org-roam-filter-by-tag tag-name)
+           (org-roam-node-list))))
+
+(defun my/org-roam-refresh-agenda-list ()
+  (interactive)
+  (let* ((current-files org-agenda-files)
+         (new-files (my/org-roam-list-notes-by-tag "Project"))
+         (all-files (delete-dups (append current-files new-files))))
+    (setq org-agenda-files all-files)))
+
+;; Build the agenda list the first time for the session
+(my/org-roam-refresh-agenda-list)
+
+(defun my/org-roam-project-finalize-hook ()
+  "Adds the captured project file to `org-agenda-files` if the capture was not aborted."
+  ;; Remove the hook since it was added temporarily
+  (remove-hook 'org-capture-after-finalize-hook #'my/org-roam-project-finalize-hook)
+
+  ;; Add project file to the agenda list if the capture was confirmed
+  (unless org-note-abort
+    (with-current-buffer (org-capture-get :buffer)
+      (add-to-list 'org-agenda-files (buffer-file-name)))))
+
+(defun my/org-roam-find-project ()
+  (interactive)
+  ;; Add the project file to the agenda after capture is finished
+  (add-hook 'org-capture-after-finalize-hook #'my/org-roam-project-finalize-hook)
+
+  ;; Select a project file to open, creating it if necessary
+  (org-roam-node-find
+   nil
+   nil
+   (my/org-roam-filter-by-tag "Project")
+   nil
+   :templates
+   '(("p" "project" plain (file "~/org/roam/templates/project-capture.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
+      :unnarrowed t))))
+
+(defun my/org-roam-capture-task ()
+  (interactive)
+  ;; Add the project file to the agenda after capture is finished
+  (add-hook 'org-capture-after-finalize-hook #'my/org-roam-project-finalize-hook)
+
+  ;; Capture the new task, creating the project file if necessary
+  (org-roam-capture- :node (org-roam-node-read
+                            nil
+                            (my/org-roam-filter-by-tag "Project"))
+                     :templates '(("p" "project" plain "** TODO %?"
+                                   :if-new (file+head+olp "%<%Y%m%d%H%M%S>-${slug}.org"
+                                                          "#+title: ${title}\n#+category: ${title}\n#+filetags: Project"
+                                                          ("Tasks"))))))
+
+;; Keybindings for org mode and org-roam
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c l") 'org-store-link)
+
+;; Org-roam keybindings
+(global-set-key (kbd "C-c o r f") 'org-roam-node-find)
+(global-set-key (kbd "C-c o r i") 'org-roam-node-insert)
+(global-set-key (kbd "C-c o r I") 'org-roam-node-insert-immediate)
+(global-set-key (kbd "C-c o r p") 'my/org-roam-find-project)
+(global-set-key (kbd "C-c o r t") 'my/org-roam-capture-task)
+(global-set-key (kbd "C-c o r r") 'org-roam-buffer-toggle)
+
+;; Basic org-modern setup
+;; Keep the same todo keywords
+(setq org-todo-keywords
+      '((sequence
+         "TODO(t)"  ; A task that needs doing
+         "PROJ(p)"  ; A project, which contains other tasks
+         "STRT(s)"  ; A task that is in progress
+         "WAIT(w)"  ; Something external is holding up this task
+         "HOLD(h)"  ; This task is paused/on hold because of me
+         "|"        ; The pipe character separates "active" states from "inactive" states
+         "DONE(d)"  ; Task successfully completed
+         "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
+        (sequence
+         "[ ](T)"   ; A task that needs doing
+         "[-](S)"   ; Task is in progress
+         "[?](W)"   ; Task is being held up or paused
+         "|"
+         "[X](D)")  ; Task was completed
+        (sequence
+         "|"
+         "OKAY(o)"
+         "YES(y)"
+         "NO(n)")))
+
+;; Update todo faces to match Doom's style (box instead of underline)
+(setq org-todo-keyword-faces
+      '(("TODO" :foreground "#7c7c75" :weight bold :box t)
+        ("STRT" :foreground "#0098dd" :weight bold :box t)
+        ("PROJ" :foreground "#af005f" :weight bold :box t)
+        ("WAIT" :foreground "#9f7efe" :weight bold :box t)
+        ("HOLD" :foreground "#e0aa00" :weight bold :box t)
+        ("DONE" :foreground "#50a14f" :weight bold :box t)
+        ("KILL" :foreground "#ff6480" :weight bold :box t)
+        ("[-]"  :foreground "#0098dd" :weight bold :box t)
+        ("OKAY" :foreground "#50a14f" :weight bold :box t)
+        ("YES"  :foreground "#50a14f" :weight bold :box t)
+        ("NO"   :foreground "#ff6480" :weight bold :box t)))
+
+;; Nicer org-indent mode (matches Doom's indentation)
+(setq org-startup-indented t)
+(setq org-indent-indentation-per-level 2)
+(setq org-adapt-indentation nil)
+
+;; Set fast todo selection
+(setq org-use-fast-todo-selection t)
+

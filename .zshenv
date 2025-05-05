@@ -2,9 +2,10 @@
 export PATH=$PATH:/home/erfan/.local/share/go/bin:/home/erfan/.local/share/cargo/bin:/opt/jetbrains-toolbox-2.3.2.31487:/usr/lib/go/bin:/home/erfan/.local/share/go:/home/erfan/.config/emacs/bin:/home/erfan/.local/bin:/home/erfan/.local/bin/statusbar:/home/erfan/.config/pyenv:/opt/Cliq:/usr/lib/emscripten
 
 # Default programs
-export EDITOR="nvim"
+export EDITOR="emacsclient -c -a"
+export GIT_EDITOR="emacsclient -c -a"
 export TERMINAL="st"
-export BROWSER="firefox"
+export BROWSER="zen-browser"
 
 # HighDPI scaling for 1080p display
 export GDK_SCALE=1
@@ -15,7 +16,7 @@ export QT_SCALE_FACTOR=1.5        # Scale Qt applications by 1.5
 export QT_FONT_DPI=96             # Use standard DPI for Qt applications
 
 # batman
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="bat -l man -p"
 
 # ~/ clean-up
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -37,6 +38,8 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export LEIN_HOME="$XDG_DATA_HOME"/lein 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo 
 export LESSHISTFILE="-"
+export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
+export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
 export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
 export MBSYNCRC=~/.config/mbsync/mbsyncrc
 . "/home/erfan/.local/share/cargo/env"

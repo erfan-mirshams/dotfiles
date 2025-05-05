@@ -28,9 +28,9 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Inconsolata Nerd Font Mono" :size 28)
-      doom-variable-pitch-font (font-spec :family "Samim" :size 30)
-      doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 42))
+(setq doom-font (font-spec :family "Inconsolata Nerd Font Mono" :size 22)
+      doom-variable-pitch-font (font-spec :family "Samim" :size 26)
+      doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 34))
 #+end_src
 ** Theme
 There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme' or manually load a theme with the
@@ -39,6 +39,9 @@ There are two ways to load a theme. Both assume the theme is installed and avail
 #+begin_src emacs-lisp
 (setq doom-theme 'modus-vivendi)
 #+end_src
+
+#+RESULTS:
+: doom-one
 
 ** Transparency
 #+begin_src emacs-lisp
@@ -238,7 +241,7 @@ Bookmarks are somewhat like registers in that they record positions you can jump
       (:prefix ("b". "buffer")
        :desc "List bookmarks"                          "L" #'list-bookmarks
        :desc "Set bookmark"                            "m" #'bookmark-set
-       :desc "Delete bookmark"                         "M" #'bookmark-set
+       :desc "Delete bookmark"                         "M" #'bookmark-delete
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 #+END_SRC
 
@@ -528,22 +531,22 @@ Winner mode has been included with GNU Emacs since version 20.  This is a global
   (add-hook 'clojure-mode-hook #'enable-paredit-mode))
 #+end_src
 
-* Copilot
+# * Copilot
 
-#+begin_src emacs-lisp
-;; accept completion from copilot and fallback to company
-(use-package! copilot
-  :hook
-  (prog-mode . copilot-mode)
-  (copilot-mode . (lambda ()
-                    (setq-local copilot--indent-warning-printed-p t))))
+# #+begin_src emacs-lisp
+# ;; accept completion from copilot and fallback to company
+# (use-package! copilot
+#   :hook
+#   (prog-mode . copilot-mode)
+#   (copilot-mode . (lambda ()
+#                     (setq-local copilot--indent-warning-printed-p t))))
 
-;; Set the keybinding for accepting Copilot completions to C-y
-(map! :map copilot-completion-map
-      "C-y" #'copilot-accept-completion
-      "C-S-y" #'copilot-accept-completion-by-word )
+# ;; Set the keybinding for accepting Copilot completions to C-y
+# (map! :map copilot-completion-map
+#       "C-y" #'copilot-accept-completion
+#       "C-S-y" #'copilot-accept-completion-by-word )
 
-#+end_src
+# #+end_src
 
 * LSP-mode temporary fix
 
@@ -569,90 +572,110 @@ Winner mode has been included with GNU Emacs since version 20.  This is a global
         :desc "Kubernetes" "k" 'kubernetes-overview))
  #+end_src
 
-* Telega
-=Telega= is full featured unofficial client for Telegram platform for GNU Emacs.
+* Python development environment
 #+begin_src emacs-lisp
-(use-package! telega
-  :defer t
-  :custom
-  (telega-directory (expand-file-name "telega" doom-cache-dir))
-  (telega-video-player-command '(concat "mpv"
-                                        (when telega-ffplay-media-timestamp
-                                          (format " --start=%f" telega-ffplay-media-timestamp))))
-  (telega-completing-read-function completing-read-function)
-  (telega-use-docker t))
-(map! (:leader
-       :desc "Telegram" :mv "o m" #'erfan/=telega)
-      (:after telega
-       :map telega-root-mode-map
-       :n "q" #'erfan/=telega-kill))
-(after! evil-snipe
-  (add-to-list 'evil-snipe-disabled-modes 'telega-root-mode))
-(after! telega
-  (set-company-backend! 'telega-chat-mode
-    '(company-ispell
-      company-dabbrev
-      telega-company-telegram-emoji
-      telega-company-username
-      telega-company-botcmd
-      telega-company-hashtag)))
-(add-hook! telega-load
-           ;; core
-           #'telega-mode-line-mode
-           #'global-telega-squash-message-mode
-           #'telega-notifications-mode
-           #'telega-autoplay-mode
+(after! lsp-mode
+  (setq lsp-pylsp-plugins-flake8-enabled t)
+  (setq lsp-pylsp-plugins-pylint-enabled t)
+  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
+  (setq lsp-pylsp-plugins-pydocstyle-enabled t)
+  (setq lsp-pylsp-plugins-autopep8-enabled t))
 
-           ;; contrib
-           #'global-telega-url-shorten-mode
-           #'global-telega-mnz-mode
-           #'telega-alert-mode
-           #'telega-transient-mode
-           #'telega-status-history-mode)
-(add-hook! '(telega-root-mode-hook telega-chat-mode-hook)
-           #'hl-line-mode)
-(add-hook! kill-emacs
-  (when (and (boundp 'telega-root-buffer-name)
-             (get-buffer telega-root-buffer-name))
-    (telega-kill t)))
-(after! telega
-  (set-popup-rule! "\\`\\*Telega.+"
-    :ignore t))
-;;; $DOOMDIR/autoload/telega.el -*- lexical-binding: t; -*-
-(defvar +telega-workspace-name "Telega")
-
-;;;###autoload
-(defun erfan/=telega (&optional arg)
-  "Like `telega', but opens the buffer in it's own workspace."
-  (interactive "P")
-  (+workspace-switch +telega-workspace-name t)
-  (unless (memq (buffer-local-value 'major-mode (window-buffer (selected-window)))
-                '(telega-root-mode telega-chat-mode telega-image-mode))
-    (doom/switch-to-scratch-buffer)
-    (telega arg)
-    (+workspace/display)))
-;;;###autoload
-(defun erfan/=telega-kill (&optional args)
-  "Like `telega-kill', but deletes the workspace associated with `+telega-workspace-name' if it exists."
-  (interactive "P")
-  (telega-kill args)
-  (+workspace-delete +telega-workspace-name))
-#+end_src
-
-* Python debugging environment
-#+begin_src emacs-lisp
-
-(use-package python-mode
-  :ensure t
-  :hook (python-mode . lsp-deferred)
-  :custom
-  (dap-python-debugger 'debugpy)
+(use-package! python
   :config
-  (require 'dap-python))
+  (setq python-shell-interpreter "python3")
+  (setq python-indent-guess-indent-offset-verbose nil)
+  (setq python-indent-guess-indent-offset t)
+  (setq python-indent-offset 4))
 
+(use-package! python-black
+  :after python
+  :config
+  (setq python-black-command "black"))
+
+(map! :after python
+      :map python-mode-map
+      :leader
+      :desc "Format buffer with Black" "=" #'python-black-buffer)
+
+(use-package! dap-mode
+  :after lsp-mode
+  :config
+  (require 'dap-python)
+  (setq dap-python-debugger 'debugpy))
+
+(add-hook! 'python-mode-hook #'lsp!)
 #+end_src
 
 * Go debugging environment
 #+begin_src emacs-lisp
 (require 'dap-dlv-go)
+#+end_src
+
+* Protobuf LSP
+a beta protobuf lsp known as bufls
+#+begin_src emacs-lisp
+;; Ensure protobuf-mode is used for .proto files
+(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+
+;; Add the buf language server
+(use-package! lsp-mode
+  :ensure t
+  :commands lsp
+  :hook (protobuf-mode . lsp)
+  :config
+  ;; Register buf-language-server with lsp-mode
+  (add-to-list 'lsp-language-id-configuration '(protobuf-mode . "protobuf"))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection "/home/erfan/.local/share/go/bin/bufls")
+                    :major-modes '(protobuf-mode)
+                    :server-id 'bufls)))
+#+end_src
+
+* Activate Evil Keybindings in Minibuffer
+#+begin_src emacs-lisp
+(setq evil-want-minibuffer t)
+#+end_src
+
+* Evil Surround
+#+begin_src emacs-lisp
+(use-package! evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+#+end_src
+
+#+RESULTS:
+: t
+
+* Activate Octave mode for .m files
+#+begin_src emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+#+end_src
+
+* Column limit
+#+begin_src emacs-lisp
+(setq-default fill-column 120)
+
+(defun erfan/enable-column-indicator-for-code ()
+  (when (derived-mode-p 'prog-mode 'text-mode)
+    (display-fill-column-indicator-mode 1)))
+
+(add-hook 'after-change-major-mode-hook #'erfan/enable-column-indicator-for-code)
+#+end_src
+
+* Use Projectile root directory in LSP mode
+#+begin_src emacs-lisp
+(setq lsp-auto-guess-root t)
+(setq lsp-guess-root-without-session t)
+#+end_src
+
+* Go configuration to use golangci-lint
+#+begin_src emacs-lisp
+(after! go-mode
+  (set-formatter! 'golangci-lint "golangci-lint run --fix")
+  (setq flycheck-go-golangci-lint-executable "golangci-lint")
+  (add-hook 'go-mode-hook (lambda ()
+                            (setq flycheck-disabled-checkers '(go-build go-test go-errcheck go-vet))
+                            (flycheck-golangci-lint-setup))))
 #+end_src

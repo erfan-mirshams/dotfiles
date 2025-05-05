@@ -42,14 +42,15 @@ picom -c &
 chbg &
 
 # Start Emacs Daemon
-emacs --daemon &
+emacs --init-directory=$XDG_CONFIG_HOME/vanilla-emacs --daemon &
 
+# dwm wrapper around clipboard
 clipmenud &
+
+# Automatic screen locking with xidlehook
+xidlehook --not-when-fullscreen --not-when-audio --timer 400 "slock" "" &
 
 # Loop
 while true; do
 	dwm >/dev/null 2>&1
 done
-
-# Execute DWM
-exec dwm

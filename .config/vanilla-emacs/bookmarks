@@ -1,0 +1,41 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("projects"
+ (filename . "~/projects/")
+ (front-context-string . "divar\n  drwxr-xr")
+ (rear-context-string . "96 Mar 17 15:05 ")
+ (position . 1434)
+ (last-modified 26612 59210 464243 886000))
+("oly"
+ (filename . "~/projects/oly/contests/")
+ (front-context-string . "1000-div2\n  drwx")
+ (rear-context-string . "96 Jan 22 15:28 ")
+ (position . 181)
+ (last-modified 26612 59171 716867 271000))
+("org"
+ (filename . "~/org/")
+ (front-context-string . "divar.org\n  -rw-")
+ (rear-context-string . "04 Apr  5 09:48 ")
+ (position . 358)
+ (last-modified 26609 18075 684881 532000))
+("documents"
+ (filename . "~/documents/")
+ (front-context-string . "books\n  drwxr-xr")
+ (rear-context-string . "96 Dec 31 16:10 ")
+ (position . 169)
+ (last-modified 26602 10590 770117 986000))
+("vanilla-emacs"
+ (filename . "~/.config/vanilla-emacs/")
+ (front-context-string . "init.el\n  -rw-r-")
+ (rear-context-string . "19 Mar 28 19:58 ")
+ (position . 462)
+ (last-modified 26598 58179 967982 330000))
+("uni"
+ (filename . "~/documents/uni/term-6/")
+ (front-context-string . "compiler\n  drwxr")
+ (rear-context-string . "96 Mar  9 07:17 ")
+ (position . 180)
+ (last-modified 26598 57984 503844 12000))
+)

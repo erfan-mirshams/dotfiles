@@ -61,6 +61,7 @@
 (package! dmenu)
 (package! ednc)
 (package! evil-tutor)
+(package! evil-surround)
 (package! ivy-posframe)
 (package! mw-thesaurus)
 (package! org-auto-tangle)
@@ -82,9 +83,6 @@
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el" "dist")))
 (package! kubernetes)
 (package! kubernetes-evil)
-(package! telega
-  :recipe (:files (:defaults
-                   "contrib/*.el"
-                   "etc"
-                   "server"
-                   "Makefile")))
+(package! protobuf-mode)
+(package! python-black)
+(package! flycheck-golangci-lint)

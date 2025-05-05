@@ -1,0 +1,110 @@
+;; Install dape
+(rc/require 'dape)
+
+;; Basic configuration
+(setq dape-buffer-window-arrangement 'right) ;; Show debug windows on the right side
+
+;; Key bindings organized by function groups
+(global-set-key (kbd "C-c d d") 'dape)                     ;; Start debugging
+(global-set-key (kbd "C-c d q") 'dape-quit)                ;; Quit debugging session
+(global-set-key (kbd "C-c d r") 'dape-restart)             ;; Restart debugging
+
+;; Execution control
+(global-set-key (kbd "C-c d c") 'dape-continue)            ;; Continue execution
+(global-set-key (kbd "C-c d n") 'dape-next)                ;; Step over
+(global-set-key (kbd "C-c d i") 'dape-step-in)             ;; Step in
+(global-set-key (kbd "C-c d o") 'dape-step-out)            ;; Step out
+
+;; Breakpoints
+(global-set-key (kbd "C-c d b") 'dape-breakpoint-toggle)   ;; Toggle breakpoint
+(global-set-key (kbd "C-c d l") 'dape-breakpoint-log)      ;; Add log breakpoint
+(global-set-key (kbd "C-c d x") 'dape-breakpoint-remove-all) ;; Remove all breakpoints
+
+;; Inspection
+(global-set-key (kbd "C-c d e") 'dape-eval)                ;; Evaluate expression
+(global-set-key (kbd "C-c d w") 'dape-watch-dwim)          ;; Watch expression
+(global-set-key (kbd "C-c d t") 'dape-select-thread)       ;; Select thread
+(global-set-key (kbd "C-c d s") 'dape-select-stack)        ;; Select stack frame
+
+(add-to-list 'dape-configs
+             `(gdb
+               modes (c-mode c-ts-mode c++-mode c++-ts-mode)
+               command "gdb"
+               :type "gdb"
+               :request "launch"
+               :program nil  ;; Will be prompted when starting
+               :cwd "${fileDirname}"))
+
+;; ;; Configure debug adapters for different languages
+;; (setq dape-configs
+;;       `(
+;;         ;; Python configuration
+;;         ("Python: Current File"
+;;          modes (python-mode python-ts-mode)
+;;          :command "python"
+;;          :type "executable"
+;;          :args ["-m" "debugpy.adapter"]
+;;          :host "localhost"
+;;          :request "launch"
+;;          :program "${file}"
+;;          :cwd "${fileDirname}")
+        
+;;         ;; NodeJS configuration
+;;         ("Node.js: Current File"
+;;          modes (js-mode js-ts-mode typescript-mode typescript-ts-mode)
+;;          :command "node"
+;;          :type "node"
+;;          :request "launch"
+;;          :program "${file}"
+;;          :cwd "${fileDirname}")
+        
+;;         ;; Go configuration
+;;         ("Go: Debug Package"
+;;          modes (go-mode go-ts-mode)
+;;          :command "dlv"
+;;          :args ["dap" "--listen" "127.0.0.1:${port}"]
+;;          :host "127.0.0.1"
+;;          :request "launch"
+;;          :type "dlv"
+;;          :cwd "${workspaceFolder}")
+
+;;         ;; C/C++ with GDB - Fixed configuration
+;;         ("GDB"  ;; Note: no colon in the name to avoid confusion
+;;          modes (c-mode c-ts-mode c++-mode c++-ts-mode)
+;;          :command "gdb"
+;;          :type "gdb"
+;;          :request "launch"
+;;          :program nil  ;; Will be prompted when starting
+;;          :cwd "${fileDirname}")
+
+;;         ;; C/C++/Rust with LLDB
+;;         ("LLDB"
+;;          modes (c-mode c-ts-mode c++-mode c++-ts-mode rust-mode rust-ts-mode)
+;;          :command "lldb-vscode"
+;;          :request "launch"
+;;          :program nil  ;; Set this when calling dape
+;;          :cwd "${fileDirname}")
+;;         ))
+
+
+;; You can add convenience functions for common debugging scenarios
+(defun dape-debug-current-file ()
+  "Debug the current file using an appropriate adapter based on the mode."
+  (interactive)
+  (let ((exec-path (append exec-path (list (expand-file-name "~/.local/bin"))))
+        (default-directory (if (buffer-file-name)
+                              (file-name-directory (buffer-file-name))
+                            default-directory)))
+    ;; Call dape with the current buffer's file
+    (dape)))
+
+;; Bind the convenience function
+(global-set-key (kbd "C-c d f") 'dape-debug-current-file)
+
+;; Always show the command buffer
+(add-hook 'dape-on-start-hooks
+          (lambda ()
+            (dape-repl)))
+
+;; Define a key to focus the REPL
+(global-set-key (kbd "C-c d p") 'dape-repl)
